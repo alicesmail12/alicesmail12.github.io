@@ -1,2 +1,3 @@
 name: FPLStatistics
 markdown: kramdown
+permalink: /FPLStatistics/:year/:month/:day/:title
