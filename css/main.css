@@ -1,7 +1,6 @@
 nav ul, footer ul {
-    font: 1.2em "Fira Sans", sans-serif;
+    font: italic small-caps bold 12px/30px Georgia, serif;
     padding: 0px;
-    list-style: none;
     font-weight: bold;
 }
 a {
@@ -11,9 +10,11 @@ a {
 a:hover {
     text-decoration: underline;
 }
-h1,h2 {
-    font-size: 3em;
-    font: 1.2em "Fira Sans", sans-serif;
+h1 {
+    font: italic small-caps bold 12px/30px Georgia, serif;
+}
+h2 {
+    font: italic small-caps bold 12px/30px Georgia, serif;
 }
 p {
     font-size: 1.5em;
