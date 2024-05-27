@@ -1,19 +1,17 @@
- @font-face {
-      font-family: "Franklin Gothic Book Regular";
-      src: url("https://github.com/alicesmail12/alicesmail12.github.io/tree/main/css/_fonts/Franklin Gothic Book Regular.ttf") format("truetype");
-}
+@import url(//fonts.googleapis.com/css?family=Libre+Franklin);
+
 title {
     margin: 60px auto;
     width: 70%;
-    font-family: 'Franklin Gothic Book Regular';
+    font-family: 'Libre Franklin', sans-serif;
 }
 body {
     margin: 60px auto;
     width: 70%;
-    font-family: 'Franklin Gothic Book Regular';
+    font-family: 'Libre Franklin', sans-serif;
 }
 nav ul, footer ul {
-    font-family: 'Franklin Gothic Book Regular';
+    font-family: 'Libre Franklin', sans-serif;
     padding: 0px;
     list-style: none;
     font-weight: bold;
@@ -31,21 +29,24 @@ a:hover {
 }
 h1 {
     font-size: 3em;
-    font-family: 'Franklin Gothic Book Regular';
+    font-family: 'Libre Franklin', sans-serif;
 }
 p {
     font-size: 1.5em;
     line-height: 1.4em;
     color: #333;
+    font-family: 'Libre Franklin', sans-serif;
 }
 footer {
     border-top: 1px solid #d5d5d5;
     font-size: .8em;
+    font-family: 'Libre Franklin', sans-serif;
 }
 
 ul.posts { 
     margin: 20px auto 40px; 
     font-size: 1.5em;
+    font-family: 'Libre Franklin', sans-serif;
 }
 
 ul.posts li {
