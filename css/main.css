@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'Franklin Gothic Book';
+    src: url("_fonts/Franklin Gothic Book Regular.ttf") format('truetype');
+    font-style: normal;
+}
+
 body {
     margin: 60px auto;
     width: 70%;
