@@ -1,14 +1,14 @@
  @font-face {
-      font-family: "Franklin Gothic Book";
+      font-family: "Franklin Gothic Book Regular";
       src: url("./_fonts/Franklin Gothic Book Regular.ttf") format("truetype");
 }
 body {
     margin: 60px auto;
     width: 70%;
-    font-family: 'Franklin Gothic Book';
+    font-family: 'Franklin Gothic Book Regular';
 }
 nav ul, footer ul {
-    font-family: 'Franklin Gothic Book';
+    font-family: 'Franklin Gothic Book Regular';
     padding: 0px;
     list-style: none;
     font-weight: bold;
