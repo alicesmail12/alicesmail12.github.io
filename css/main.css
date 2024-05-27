@@ -1,6 +1,6 @@
  @font-face {
       font-family: "Franklin Gothic Book Regular";
-      src: url("./_fonts/Franklin Gothic Book Regular.ttf") format("truetype");
+      src: url("https://github.com/alicesmail12/alicesmail12.github.io/tree/main/css/_fonts/Franklin Gothic Book Regular.ttf") format("truetype");
 }
 body {
     margin: 60px auto;
