@@ -2,6 +2,11 @@
       font-family: "Franklin Gothic Book Regular";
       src: url("https://github.com/alicesmail12/alicesmail12.github.io/tree/main/css/_fonts/Franklin Gothic Book Regular.ttf") format("truetype");
 }
+title {
+    margin: 60px auto;
+    width: 70%;
+    font-family: 'Franklin Gothic Book Regular';
+}
 body {
     margin: 60px auto;
     width: 70%;
