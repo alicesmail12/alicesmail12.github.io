@@ -82,8 +82,10 @@ sp{
   font-size: 50pt;
   line-height: 50px; 
 }
-
-grey {
+subtitle {
     text-decoration: none;
     color: #999;
+    font-size: 18pt;
+    font-family: 'Radio Canada Big';
+    line-height: 36px; 
 }
