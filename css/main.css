@@ -1,17 +1,17 @@
-@import url(//fonts.googleapis.com/css?family=Libre+Franklin);
+@import url(//fonts.googleapis.com/css?family=Radio-Canada-Big);
 
 title {
     margin: 60px auto;
     width: 70%;
-    font-family: 'Libre Franklin';
+    font-family: 'Radio Canada Big';
 }
 body {
     margin: 60px auto;
     width: 70%;
-    font-family: 'Libre Franklin';
+    font-family: 'Radio Canada Big';
 }
 nav ul, footer ul {
-    font-family: 'Libre Franklin';
+    font-family: 'Radio Canada Big';
     padding: 0px;
     list-style: none;
     font-weight: bold;
@@ -31,18 +31,18 @@ p {
     font-size: 1.5em;
     line-height: 1.4em;
     color: #333;
-    font-family: 'Libre Franklin';
+    font-family: 'Radio Canada Big';
 }
 footer {
     border-top: 1px solid #d5d5d5;
     font-size: .8em;
-    font-family: 'Libre Franklin';
+    font-family: 'Radio Canada Big';
 }
 
 ul.posts { 
     margin: 20px auto 40px; 
     font-size: 1.5em;
-    font-family: 'Libre Franklin';
+    font-family: 'Radio Canada Big';
 }
 
 ul.posts li {
@@ -50,31 +50,32 @@ ul.posts li {
 }
 /* Whole document: */
 body{
-  font-family: 'Libre Franklin';
+  font-family: 'Radio Canada Big';
   font-size: 14pt;
   line-height: 24px; 
 }
 /* Headers */
 h1{
   font-size: 22pt;
-  font-family: 'Libre Franklin';
+  font-family: 'Radio Canada Big';
   line-height: 36px; 
 }
 h2{
   font-size: 18pt;
-  font-family: 'Libre Franklin';
+  font-family: 'Radio Canada Big';
   line-height: 36px; 
 }
 h3,h4,h5,h6{
   font-size: 18pt;
-  font-family: 'Libre Franklin';
+  font-family: 'Radio Canada Big';
   line-height: 36px; 
 }
 /* Bold */
 bold {
-  font-family: 'Libre Franklin';
+  font-family: 'Radio Canada Big';
   font-size: 14pt;
   line-height: 24px; 
+  font-weight: bold;
 }
 /* Spacing */
 sp{
