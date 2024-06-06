@@ -7,15 +7,18 @@ font-family: 'Radio Canada Big';
 line-height: 36px; 
 font-weight:bold; }
 
-h2 {
-font-size: 16pt;
-font-family: 'Radio Canada Big';
-line-height: 32px; }
-  
-h3,h4,h5,h6,p {
+h2,h3,h4,h5,h6,p {
 font-size: 16pt;
 font-family: 'Radio Canada Big';
 line-height: 32px; 
+}
+
+body {
+    margin: 60px auto;
+    width: 70%;
+    font-size: 16pt;
+    font-family: 'Radio Canada Big';
+    line-height: 32px; 
 }
 
 bold {
@@ -74,13 +77,5 @@ subtitle {
     font-size: 18pt;
     font-family: 'Radio Canada Big';
     line-height: 36px; 
-}
-
-body {
-    margin: 60px auto;
-    width: 70%;
-    font-size: 16pt;
-    font-family: 'Radio Canada Big';
-    line-height: 32px; 
 }
 
