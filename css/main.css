@@ -1,15 +1,34 @@
 @import url(https://fonts.googleapis.com/css2?family=Radio+Canada+Big);
+@import url(https://fonts.googleapis.com/css2?family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&display=swap);
+
+h1{
+font-size: 24pt;
+font-family: 'Radio Canada Big';
+line-height: 36px; 
+font-weight:bold; }
+
+h2 {
+font-size: 20pt;
+font-family: 'Radio Canada Big';
+line-height: 36px; }
+  
+h3,h4,h5,h6,p,body {
+font-size: 16pt;
+font-family: 'Radio Canada Big';
+line-height: 32px; }
+
+bold {
+font-family: 'Radio Canada Big';
+font-size: 16pt;
+line-height: 32px; 
+font-weight:bold; }
 
 title {
     margin: 60px auto;
     width: 70%;
     font-family: 'Radio Canada Big';
 }
-body {
-    margin: 60px auto;
-    width: 70%;
-    font-family: 'Radio Canada Big';
-}
+
 nav ul, footer ul {
     font-family: 'Radio Canada Big';
     padding: 0px;
@@ -27,12 +46,7 @@ a {
 a:hover {
     text-decoration: underline;
 }
-p {
-    font-size: 1.5em;
-    line-height: 1.4em;
-    color: #333;
-    font-family: 'Radio Canada Big';
-}
+
 footer {
     border-top: 1px solid #d5d5d5;
     font-size: .8em;
@@ -48,35 +62,7 @@ ul.posts {
 ul.posts li {
     list-style: none;
 }
-/* Whole document: */
-body{
-  font-family: 'Radio Canada Big';
-  font-size: 14pt;
-  line-height: 24px; 
-}
-/* Headers */
-h1{
-  font-size: 22pt;
-  font-family: 'Radio Canada Big';
-  line-height: 36px; 
-}
-h2{
-  font-size: 18pt;
-  font-family: 'Radio Canada Big';
-  line-height: 36px; 
-}
-h3,h4,h5,h6{
-  font-size: 18pt;
-  font-family: 'Radio Canada Big';
-  line-height: 36px; 
-}
-/* Bold */
-bold {
-  font-family: 'Radio Canada Big';
-  font-size: 14pt;
-  line-height: 24px; 
-  font-weight: bold;
-}
+
 /* Spacing */
 sp{
   font-size: 50pt;
