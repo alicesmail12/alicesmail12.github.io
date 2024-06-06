@@ -15,7 +15,10 @@ line-height: 32px; }
 h3,h4,h5,h6,p,body {
 font-size: 16pt;
 font-family: 'Radio Canada Big';
-line-height: 32px; }
+line-height: 32px; 
+margin: 60px auto;
+width: 70%;
+}
 
 bold {
 font-family: 'Radio Canada Big';
