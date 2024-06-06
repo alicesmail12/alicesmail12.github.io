@@ -24,11 +24,13 @@ title {
 
 nav ul, footer ul {
     font-family: 'Radio Canada Big';
+    padding: 0px;
     list-style: none;
     font-weight: bold;
 }
 nav ul li, footer ul li {
     display: inline;
+    margin-right: 20px;
 }
 a {
     text-decoration: none;
@@ -43,6 +45,7 @@ footer {
     font-family: 'Radio Canada Big';
 }
 ul.posts { 
+    margin: 20px auto 40px; 
     font-size: 1.5em;
     font-family: 'Radio Canada Big';
 }
