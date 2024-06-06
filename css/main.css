@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css2?family=Radio+Canada+Big);
+@import url(https://fonts.googleapis.com/css2?family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&display=swap);
 
 h1{
 font-size: 24pt;
@@ -6,10 +7,18 @@ font-family: 'Radio Canada Big';
 line-height: 36px; 
 font-weight:bold; }
 
-h2,h3,h4,h5,h6,p,body {
+h2,h3,h4,h5,h6,p {
 font-size: 16pt;
 font-family: 'Radio Canada Big';
 line-height: 32px; 
+}
+
+body {
+    margin: 60px auto;
+    width: 70%;
+    font-size: 16pt;
+    font-family: 'Radio Canada Big';
+    line-height: 32px; 
 }
 
 bold {
@@ -19,6 +28,8 @@ line-height: 32px;
 font-weight:bold; }
 
 title {
+    margin: 60px auto;
+    width: 70%;
     font-family: 'Radio Canada Big';
 }
 
