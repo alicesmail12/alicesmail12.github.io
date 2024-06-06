@@ -50,23 +50,19 @@ a {
 a:hover {
     text-decoration: underline;
 }
-
 footer {
     border-top: 1px solid #d5d5d5;
     font-size: .8em;
     font-family: 'Radio Canada Big';
 }
-
 ul.posts { 
     margin: 20px auto 40px; 
     font-size: 1.5em;
     font-family: 'Radio Canada Big';
 }
-
 ul.posts li {
     list-style: none;
 }
-
 sp{
   font-size: 50pt;
   line-height: 50px; 
@@ -78,21 +74,7 @@ subtitle {
     font-family: 'Radio Canada Big';
     line-height: 36px; 
 }
-
 .main-container {
 margin-left: auto;
 margin-right: auto;
-}
-img {
-max-width:100%;
-}
-button.code-folding-btn:focus {
-outline: none;
-}
-summary {
-display: list-item;
-}
-
-pre code {
-padding: 0;
 }
