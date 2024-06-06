@@ -258,27 +258,7 @@ if (window.hljs) {
 <style type="text/css">
 @import url(https://fonts.googleapis.com/css2?family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&display=swap);
 
-h1{
-font-size: 24pt;
-font-family: 'Radio Canada Big';
-line-height: 36px; 
-font-weight:bold; }
-
-h2 {
-font-size: 20pt;
-font-family: 'Radio Canada Big';
-line-height: 36px; }
-  
-h3,h4,h5,h6,p,body {
-font-size: 16pt;
-font-family: 'Radio Canada Big';
-line-height: 32px; }
-
-bold {
-font-family: 'Radio Canada Big';
-font-size: 16pt;
-line-height: 32px; 
-font-weight:bold; }
+<link rel="stylesheet" type="text/css" href="/css/main.css">
   
 .main-container {
 max-width: 1000px;
@@ -300,16 +280,13 @@ outline: none;
 summary {
 display: list-item;
 }
-details > summary > p:only-child {
-display: inline;
-}
+
 pre code {
 padding: 0;
 }
 </style>
 
-
-
+  
 <!-- tabsets -->
 
 <style type="text/css">
@@ -355,13 +332,22 @@ display: none;
 
 <!-- code folding -->
 
-
-
+		<title>{{ page.title }}</title>
+		<!-- link to main stylesheet -->
+		<link rel="stylesheet" type="text/css" href="/css/main.css">
 
 </head>
 
 <body>
 
+  <nav>
+	<ul>
+		<li><a href="/">Home</a></li>
+		<li><a href="/about">About</a></li>
+		<li><a href="https://alicesmail12.github.io/Statistics">Statistics</a></li>
+	</ul>
+	</nav>
+	<div class="container">
 
 <div class="container-fluid main-container">
 
@@ -515,5 +501,12 @@ $(document).ready(function () {
   })();
 </script>
 
+  </div><!-- /.container -->
+	<footer>
+		<ul>
+		<li><a href="https://github.com/alicesmail12">github.com/alicesmail12</a></li>
+		</ul>
+	</footer>
+  
 </body>
 </html>
