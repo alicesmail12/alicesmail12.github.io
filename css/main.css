@@ -1,5 +1,4 @@
 @import url(https://fonts.googleapis.com/css2?family=Radio+Canada+Big);
-@import url(https://fonts.googleapis.com/css2?family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&display=swap);
 
 h1{
 font-size: 24pt;
@@ -14,8 +13,8 @@ line-height: 32px;
 }
 
 body {
-    margin: 50px auto;
-    width: 70%;
+    margin: 0px auto;
+    width: 100%;
     font-size: 16pt;
     font-family: 'Radio Canada Big';
     line-height: 32px; 
