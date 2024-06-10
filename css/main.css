@@ -14,7 +14,7 @@ line-height: 32px;
 }
 
 body {
-    margin: 50px auto;
+    margin: 60px auto;
     width: 70%;
     font-size: 16pt;
     font-family: 'Radio Canada Big';
@@ -28,7 +28,7 @@ line-height: 32px;
 font-weight:bold; }
 
 title {
-    margin: 50px auto;
+    margin: 60px auto;
     width: 70%;
     font-family: 'Radio Canada Big';
 }
@@ -77,9 +77,4 @@ subtitle {
     font-size: 18pt;
     font-family: 'Radio Canada Big';
     line-height: 36px; 
-}
-
-.main-container {
-margin-left: auto;
-margin-right: auto;
 }
