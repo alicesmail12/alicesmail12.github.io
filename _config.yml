@@ -1,3 +1,7 @@
 name: Statistics
 markdown: kramdown
 permalink: /Statistics/:year/:month/:day/:title
+
+name: Genetics
+markdown: kramdown
+permalink: /Genetics/:year/:month/:day/:title
