@@ -1,17 +1,3 @@
-
-
-defaults:
-  - scope:
-      path: "_posts/Statistics"
-    values:
-      name: Statistics
-  markdown: kramdown
- permalink: /Statistics/:year/:month/:day/:title
-      type: "Statistics"
-  - scope:
-      path: "_posts/Genetics"
-    values:
-      name: Genetics
-  markdown: kramdown
- permalink: /Genetics/:year/:month/:day/:title
-      type: "work"
+name: Statistics
+markdown: kramdown
+permalink: /Statistics/:year/:month/:day/:title
