@@ -247,23 +247,17 @@ if (window.hljs) {
 }
 </script>
 
-
-
 <style type="text/css">
+@import url(https://fonts.googleapis.com/css2?family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&display=swap);
+
 <link rel="stylesheet" type="text/css" href="/css/main.css">
-@import url(https://fonts.googleapis.com/css2?family=Radio+Canada+Big);
+  
 .main-container {
 margin-left: auto;
-margin-right: auto;
+margin-right: 100px;
 }
 img {
 max-width:100%;
-}
-.tabbed-pane {
-padding-top: 12px;
-}
-.html-widget {
-margin-bottom: 20px;
 }
 button.code-folding-btn:focus {
 outline: none;
@@ -271,15 +265,10 @@ outline: none;
 summary {
 display: list-item;
 }
-details > summary > p:only-child {
-display: inline;
-}
 pre code {
 padding: 0;
 }
 </style>
-
-
 
 <!-- tabsets -->
 
@@ -325,34 +314,24 @@ display: none;
 </style>
 
 <!-- code folding -->
-
-
-
-
+<head>
+		<title>{{ page.title }}</title>
+		<!-- link to main stylesheet -->
+		<link rel="stylesheet" type="text/css" href="/css/main.css">
 </head>
 
 <body>
+  
+	<nav>
+	<ul>
+		<li><a href="/">Home</a></li>
+		<li><a href="/about">About</a></li>
+		<li><a href="https://alicesmail12.github.io/Statistics">Statistics</a></li>
+		<li><a href="https://alicesmail12.github.io/Genetics">Genetics</a></li>
+	</ul>
+	</nav>
 
-<nav>
-	    		<ul>
-	        		<li><a href="/">Home</a></li>
-		        	<li><a href="/about">About</a></li>
-	        		<li><a href="https://alicesmail12.github.io/Statistics">Statistics</a></li>
-				<li><a href="https://alicesmail12.github.io/Genetics">Genetics</a></li>
-	    		</ul>
-			</nav>
-
-<div class="container-fluid main-container">
-
-
-
-
-<div id="header">
-
-
-
-
-</div>
+<div class="container">
 
 
 <h1>Linkage Disequilibrium</h1>
