@@ -11,7 +11,7 @@
 
 
 
-<title>2024-06-18-LDSC-Genetic-Correlation.knit</title>
+<title>Genetic Correlation using LDSC</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -248,36 +248,23 @@ if (window.hljs) {
 </script>
 
 
-
-
-
-
-
-
-
 <style type="text/css">
+@import url(https://fonts.googleapis.com/css2?family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&display=swap);
+
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+  
 .main-container {
-max-width: 940px;
 margin-left: auto;
-margin-right: auto;
+margin-right: 100px;
 }
 img {
 max-width:100%;
-}
-.tabbed-pane {
-padding-top: 12px;
-}
-.html-widget {
-margin-bottom: 20px;
 }
 button.code-folding-btn:focus {
 outline: none;
 }
 summary {
 display: list-item;
-}
-details > summary > p:only-child {
-display: inline;
 }
 pre code {
 padding: 0;
@@ -331,25 +318,24 @@ display: none;
 
 <!-- code folding -->
 
-
-
-
+<head>
+		<title>{{ page.title }}</title>
+		<!-- link to main stylesheet -->
+		<link rel="stylesheet" type="text/css" href="/css/main.css">
 </head>
 
 <body>
+  
+	<nav>
+	<ul>
+		<li><a href="/">Home</a></li>
+		<li><a href="/about">About</a></li>
+		<li><a href="https://alicesmail12.github.io/Statistics">Statistics</a></li>
+		<li><a href="https://alicesmail12.github.io/Genetics">Genetics</a></li>
+	</ul>
+	</nav>
 
-
-<div class="container-fluid main-container">
-
-
-
-
-<div id="header">
-
-
-
-
-</div>
+<div class="container">
 
 
 <h1>
@@ -413,7 +399,7 @@ catalog:</p>
 # Download GWAS summary statistics: T2D and BMI
 #wget http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90029001-GCST90030000/GCST90029024/GCST90029024_buildGRCh37.tsv -P $WORKING
 #wget http://ftp.ebi.ac.uk//pub/databases/gwas/summary_statistics/GCST90428001-GCST90429000/GCST90428119/GCST90428119.tsv.gz -P $WORKING</code></pre>
-<bold><u>2a. Removing the MHC Region</u>
+<bold><u>2a. Removing the MHC Region</u></bold>
 </h2>
 <p>Before we use LDSC, we can perform a prior step that removes the
 <bold>MHC region</bold>: the complex LD patterns in this region can
@@ -899,6 +885,10 @@ $(document).ready(function () {
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
 </script>
-
+  <footer>
+	    	<ul>
+	      <li><a href="https://github.com/alicesmail12">github.com/alicesmail12</a></li>
+				</ul>
+	</footer>
 </body>
 </html>
