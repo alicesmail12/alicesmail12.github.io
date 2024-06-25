@@ -397,8 +397,8 @@ catalog:</p>
 #WORKING=/UsingLDSC/BMI_T2D/
 
 # Download GWAS summary statistics: T2D and BMI
-#wget http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90029001-GCST90030000/GCST90029024/GCST90029024_buildGRCh37.tsv -P $WORKING
-#wget http://ftp.ebi.ac.uk//pub/databases/gwas/summary_statistics/GCST90428001-GCST90429000/GCST90428119/GCST90428119.tsv.gz -P $WORKING</code></pre>
+wget http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90029001-GCST90030000/GCST90029024/GCST90029024_buildGRCh37.tsv -P $WORKING
+wget http://ftp.ebi.ac.uk//pub/databases/gwas/summary_statistics/GCST90428001-GCST90429000/GCST90428119/GCST90428119.tsv.gz -P $WORKING</code></pre>
 <bold><u>2a. Removing the MHC Region</u></bold>
 </h2>
 <p>Before we use LDSC, we can perform a prior step that removes the
@@ -407,17 +407,17 @@ affect heritability &amp; genetic correlation estimates. Using the
 script RemoveMHC.py (at github.com/alicesmail12/LDSC) we can remove the
 MHC region from both of our downloaded files:</p>
 <pre class="bash"><code># Remove MHC region
-#$WORKING/RemoveMHC.py \
-#--sumstatsFile $WORKING/GWASFiles/GCST90428119.tsv \
-#--sep t \
-#--logFile $WORKING/Logs/BMIMHC \
-#--outFile $WORKING/GWASFiles/BMIMHC            
+$WORKING/RemoveMHC.py \
+--sumstatsFile $WORKING/GWASFiles/GCST90428119.tsv \
+--sep t \
+--logFile $WORKING/Logs/BMIMHC \
+--outFile $WORKING/GWASFiles/BMIMHC            
 
-#$WORKING/RemoveMHC.py \
-#--sumstatsFile $WORKING/GWASFiles/GCST90029024_buildGRCh37.tsv \
-#--sep t \
-#--logFile $WORKING/Logs/T2DMHClog \
-#--outFile $WORKING/GWASFiles/T2DMHC</code></pre>
+$WORKING/RemoveMHC.py \
+--sumstatsFile $WORKING/GWASFiles/GCST90029024_buildGRCh37.tsv \
+--sep t \
+--logFile $WORKING/Logs/T2DMHClog \
+--outFile $WORKING/GWASFiles/T2DMHC</code></pre>
 <p>We can inspect the output logs from these commands to check nothing
 went wrong:</p>
 <pre class="bash"><code>cat /Users/alicesmail/Desktop/KCL/LCV/Logs/BMIMHCrm.log</code></pre>
