@@ -487,8 +487,8 @@ triglyceride level will be in high linkage disequilibrium. For MR, we
 only want <bold>independent</bold> SNPs. The MRC IEU API has a function
 that performs clumping on the set of SNPs:</p>
 <pre class="r"><code># LD clumping
-options(ieugwasr_api=&#39;gwas-api.mrcieu.ac.uk/&#39;)</code></pre>
-<pre class="r"><code>TriGMRClumped &lt;- clump_data(TriGMR, clump_kb=500, clump_r2=0.01)</code></pre>
+options(ieugwasr_api=&#39;gwas-api.mrcieu.ac.uk/&#39;)
+TriGMRClumped &lt;- clump_data(TriGMR, clump_kb=500, clump_r2=0.01)</code></pre>
 <h3>
 <u>5. Removing the MHC Region</u>
 </h3>
