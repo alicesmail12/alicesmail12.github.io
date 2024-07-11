@@ -11,7 +11,7 @@
 
 
 
-<title>2024-07-10-Mendelian-Randomisation.knit</title>
+<title>Mendelian Randomisation</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -247,28 +247,17 @@ if (window.hljs) {
 }
 </script>
 
-
-
-
-
-
-
-
-
 <style type="text/css">
+@import url(https://fonts.googleapis.com/css2?family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&display=swap);
+
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+  
 .main-container {
-max-width: 940px;
 margin-left: auto;
-margin-right: auto;
+margin-right: 100px;
 }
 img {
 max-width:100%;
-}
-.tabbed-pane {
-padding-top: 12px;
-}
-.html-widget {
-margin-bottom: 20px;
 }
 button.code-folding-btn:focus {
 outline: none;
@@ -276,15 +265,10 @@ outline: none;
 summary {
 display: list-item;
 }
-details > summary > p:only-child {
-display: inline;
-}
 pre code {
 padding: 0;
 }
 </style>
-
-
 
 <!-- tabsets -->
 
@@ -331,26 +315,24 @@ display: none;
 
 <!-- code folding -->
 
-
-
-
+<head>
+		<title>{{ page.title }}</title>
+		<!-- link to main stylesheet -->
+		<link rel="stylesheet" type="text/css" href="/css/main.css">
 </head>
 
 <body>
+  
+	<nav>
+	<ul>
+		<li><a href="/">Home</a></li>
+		<li><a href="/about">About</a></li>
+		<li><a href="https://alicesmail12.github.io/Statistics">Statistics</a></li>
+		<li><a href="https://alicesmail12.github.io/Genetics">Genetics</a></li>
+	</ul>
+	</nav>
 
-
-<div class="container-fluid main-container">
-
-
-
-
-<div id="header">
-
-
-
-
-</div>
-
+<div class="container">
 
 <h1>
 {{ page.title }}
@@ -506,9 +488,7 @@ only want <bold>independent</bold> SNPs. The MRC IEU API has a function
 that performs clumping on the set of SNPs:</p>
 <pre class="r"><code># LD clumping
 options(ieugwasr_api=&#39;gwas-api.mrcieu.ac.uk/&#39;)</code></pre>
-<pre class="r"><code>#TriGMRClumped &lt;- clump_data(TriGMR, clump_kb=500, clump_r2=0.01)
-#write.csv(TriGMRClumped, &#39;TriGMRClumped.csv&#39;)
-TriGMRClumped &lt;- read.csv(&#39;TriGMRClumped.csv&#39;, header=TRUE)</code></pre>
+<pre class="r"><code>TriGMRClumped &lt;- clump_data(TriGMR, clump_kb=500, clump_r2=0.01)</code></pre>
 <h3>
 <u>5. Removing the MHC Region</u>
 </h3>
@@ -1053,6 +1033,10 @@ $(document).ready(function () {
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
 </script>
-
+  <footer>
+	    	<ul>
+	      <li><a href="https://github.com/alicesmail12">github.com/alicesmail12</a></li>
+				</ul>
+	</footer>
 </body>
 </html>
