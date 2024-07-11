@@ -481,9 +481,9 @@ TriGMR &lt;- TwoSampleMR::format_data(snps=NULL, type=&#39;exposure&#39;, TriGSi
 <h3>
 <u>4. Clumping</u>
 </h3>
-<p>With the filtered and formatted data, we can perform clumping. This
-is a very important step: lots of SNPs associated with plasma
-triglyceride level will be in high linkage disequilibrium. For MR, we
+<p>With the filtered and formatted data, we can perform <bold>clumping</bold>, 
+which is the removal of SNPs in high LD so that the most significant SNP per region is retained. This
+is a very important step: SNPs in high linkage disequilibrium with significant SNPs will introduce overcounting and will bias the regression. For MR, we
 only want <bold>independent</bold> SNPs. The MRC IEU API has a function
 that performs clumping on the set of SNPs:</p>
 <pre class="r"><code># LD clumping
@@ -492,7 +492,7 @@ TriGMRClumped &lt;- clump_data(TriGMR, clump_kb=500, clump_r2=0.01)</code></pre>
 <h3>
 <u>5. Removing the MHC Region</u>
 </h3>
-<p>Another step we need to take here is removing any MHC SNPs, due to
+<p>Another step we need to take here is removing any <bold>MHC SNPs</bold>, due to
 the complex LD patterns in this region. The exposure GWAS does not
 contain information on chromosome &amp; position, so we will filter the
 SNPs out of the outcome data instead:</p>
