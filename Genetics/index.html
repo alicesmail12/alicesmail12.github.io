@@ -53,6 +53,11 @@ buttontext{
 <div class="container">
 <h1>Genetics</h1>
 <body>
+    <ul class="posts">
+      {% for post in site.categories.Statistics %}
+      <li></li><span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+      {% endfor %}
+    </ul>
     <div class="portfolio">
         <div class="grid-item">
             <button onclick="location.href='https://alicesmail12.github.io/Genetics/Manually-Calculating-Heritability-Using-Simulations'" type="button" class="button">
