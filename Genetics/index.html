@@ -53,14 +53,9 @@ buttontext{
 <div class="container">
 <h1>Genetics</h1>
 <body>
-    <ul class="posts">
-      {% for post in site.categories.Genetics %}
-      <li></li>»<a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
-      {% endfor %}
-    </ul>
     <div class="portfolio">
         <div class="grid-item">
-            <ahref='/_posts/Manually-Calculating-Heritability-Using-Simulations'>
+            <a ref='/_posts/Manually-Calculating-Heritability-Using-Simulations'>
             <button type="button" class="button">
                 <img class="imagefit" src='images/buttons-01.png'/> 
                 <buttontext>Manually Calculating Heritability</buttontext>
