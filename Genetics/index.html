@@ -56,6 +56,11 @@ margin-right: auto;
 <body>
     <div class="portfolio">
         <div class="grid-item">
+            <ul class="posts">
+              {% for post in site.categories.Statistics %}
+              <li></li><span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+              {% endfor %}
+            </ul>
             <a href="/Genetics/_posts/https://alicesmail12.github.io/alicesmail12.github.io/Genetics/_posts/Manually-Calculating-Heritability-Using-Simulations.html"  class="button">BUTTON</a>
             <a href="/Genetics/_posts/Manually-Calculating-Heritability-Using-Simulations"  type="button" class="button">
                 <img class="imagefit" src='images/buttons-02.png'/> 
