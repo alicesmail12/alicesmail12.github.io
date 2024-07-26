@@ -73,9 +73,8 @@ a {
 }
 
 a:hover {
-    text-decoration: underline;
-    color: #989eac;
-    transform: scaleX(1.05) scaleY(1.05);
+    color: #434b5e;
+    transform: scaleX(1.1) scaleY(1.1);
 }
 
 footer {
