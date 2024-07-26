@@ -68,11 +68,12 @@ nav ul li, footer ul li {
 
 a {
     text-decoration: none;
+    color: #545E75;
 }
 
 a:hover {
     text-decoration: underline;
-    
+    color: #545E75;
 }
 
 footer {
