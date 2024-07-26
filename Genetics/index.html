@@ -8,9 +8,17 @@ margin-left: auto;
 margin-right: auto;
 }
     
-.portfolio {
+.portfolio1 {
     display: grid;
     grid-template-rows: 80px 80px 80px;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 15px;
+    column-gap: 20px
+}
+
+.portfolio2 {
+    display: grid;
+    grid-template-rows: 80px 80px;
     grid-template-columns: repeat(2, 1fr);
     row-gap: 15px;
     column-gap: 20px
@@ -74,7 +82,7 @@ a:hover {
 <div class="container">
 <h1>Statistical Genetics</h1>
 <body>
-    <div class="portfolio">
+    <div class="portfolio1">
         <div class="grid-item">
             <a href="https://alicesmail12.github.io/Genetics/Manually-Calculating-Heritability-Using-Simulations.html"  type="button" class="button">
                 <img class="imagefit" src='images/buttons-02.png'/> 
@@ -105,7 +113,7 @@ a:hover {
         </div>
     </div>
 <h1>Genetics Concepts</h1>
-    <div class="portfolio">
+    <div class="portfolio2">
         <div class="grid-item">
             <a href="https://alicesmail12.github.io/Genetics/Linkage-Disequilibrium.html"  type="button" class="button">
                 <img class="imagefit" src='images/buttons-02.png'/> 
