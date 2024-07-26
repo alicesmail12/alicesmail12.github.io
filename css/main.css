@@ -4,6 +4,10 @@
 #my{
 zoom: 90%;
 }
+div{
+    color: #545E75;
+}
+
 h1{
     font-size: 24pt;
     font-family: 'Radio Canada Big';
