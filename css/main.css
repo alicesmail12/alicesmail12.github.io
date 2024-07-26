@@ -9,19 +9,21 @@ h1{
     font-family: 'Radio Canada Big';
     line-height: 36px; 
     font-weight:bold; 
-    color: #545E75;
+    color: #C03221;
 }
 
 h2 {
     font-size: 20pt;
     font-family: 'Radio Canada Big';
     line-height: 36px; 
+    color: #545E75;
 }
 
 h3,h4,h5,h6,p {
     font-size: 16pt;
     font-family: 'Radio Canada Big';
     line-height: 32px; 
+    color: #545E75;
 }
 
 body {
@@ -30,13 +32,16 @@ body {
     font-size: 16pt;
     font-family: 'Radio Canada Big';
     line-height: 32px; 
+    color: #545E75;
 }
 
 bold {
-font-family: 'Radio Canada Big';
-font-size: 16pt;
-line-height: 32px; 
-font-weight:bold; }
+    font-family: 'Radio Canada Big';
+    font-size: 16pt;
+    line-height: 32px; 
+    font-weight:bold; 
+    color: #545E75;
+}
 
 title {
     margin: 60px auto;
@@ -49,17 +54,22 @@ nav ul, footer ul {
     padding: 0px;
     list-style: none;
     font-weight: bold;
+    color: #545E75;
 }
+
 nav ul li, footer ul li {
     display: inline;
     margin-right: 20px;
 }
+
 a {
     text-decoration: none;
-    color: #999;
+    color: #545E75;
 }
+
 a:hover {
     text-decoration: underline;
+    
 }
 
 footer {
@@ -82,9 +92,10 @@ sp{
   font-size: 50pt;
   line-height: 50px; 
 }
+
 subtitle {
     text-decoration: none;
-    color: #999;
+    color: #545E75;
     font-size: 18pt;
     font-family: 'Radio Canada Big';
     line-height: 36px; 
