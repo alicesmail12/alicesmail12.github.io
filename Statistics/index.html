@@ -7,13 +7,99 @@ title: Statistics
 margin-left: auto;
 margin-right: auto;
 }
+    
+.portfolio {
+    display: grid;
+    grid-template-rows: 80px 80px 80px 80px;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 15px;
+    column-gap: 20px
+}
+
+.imagefit {
+    width: 20%;
+    height: 100%;
+    border-radius: 5px 0px 0px 0px;
+}
+
+.button {
+    display: flex;
+    padding: 0px;
+    background: 'black';
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    overflow: hidden;
+    font-family: 'Radio Canada Big';
+    font-size: 24px;
+    font-weight: 500;
+    cursor: pointer;
+    width: 100%;
+    height: 85px;
+    text-align: center;
+    background: #ebebeb;
+    color: black;
+    transition: all .25s ease;
+}
+
+.button:hover{
+    background: #9ab980;
+    color: white;
+    transform: scaleX(1.05) scaleY(1.05);
+}
+
+buttontext{
+    padding: 27.5px 20px;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.imagefit2 {
+    display: none;
+}
+.button:hover .imagefit2 {
+    display: inline-block;
+    width: 20%;
+    height: 100%;
+    border-radius: 5px 0px 0px 0px;
+    transition-duration: 0.25s;
+    -webkit-transition-duration: 0.25s; 
+    -ms-transition-duration: 0.25s;
+    -moz-transition-duration: 0.25s;
+}
+	
+.button:hover .imagefit {
+    display: none;
+}
+    
 </style>
 <div class="container">
-<h1>Statistics</h1>
-<ul class="posts">
-  {% for post in site.categories.Statistics %}
-  <li></li><span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
-  {% endfor %}
-</ul>
+<h1>Genetics</h1>
+<body>
+    <div class="portfolio">
+        <div class="grid-item">
+            <a href="https://alicesmail12.github.io/Statistics/Introduction-to-RStudio.html"  type="button" class="button">
+                <img class="imagefit" src='images/buttons-02.png'/> 
+		            <img class="imagefit2" src='images/buttons-01.png'/> 
+                <buttontext>Introduction to RStudio</buttontext>
+            </a>
+            
+        </div>
+        <div class="grid-item">
+            <a href="https://alicesmail12.github.io/Statistics/T-tests.html"  type="button" class="button">
+                <img class="imagefit" src='images/buttons-02.png'/> 
+		            <img class="imagefit2" src='images/buttons-01.png'/> 
+                <buttontext>T-Tests</buttontext>
+            </a>
+        </div>
+        <div class="grid-item">
+            <a href="https://alicesmail12.github.io/Statistics/ANOVA.html"  type="button" class="button">
+                <img class="imagefit" src='images/buttons-01.png'/> 
+                <buttontext>ANOVA</buttontext>
+            </a>
+        </div>
+    </div>
+</body>
 </div>
-
