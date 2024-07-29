@@ -416,12 +416,12 @@ Statistics with FPL | Scatter Plots
 <p>
 July 2024
 </p>
-<br><p>Before trying to plot a graph, I need to load the packages I want to
+<p class="" style="margin: 4px;"></p><p>Before trying to plot a graph, I need to load the packages I want to
 use (ggplot2 &amp; dplyr, which are part of the tidyverse package), and
 download my data from vaastav’s Fantasy-Premier-League GitHub page. This
 repository stores lots of FPL data from the last few seasons, which is
 very helpful!</p>
-<br>
+<p class="" style="margin: 4px;"></p>
 <pre class="r"><code># Load tidyverse
 library(tidyverse)
 
@@ -432,7 +432,7 @@ PlayersList &lt;- lapply(filenames, function(x) {
   data &lt;- subset(read_csv(url(paste0(github, &quot;gws/&quot;,x,&quot;.csv&quot;))), minutes&gt;0)
   return(data)}) 
 PlayerData &lt;- data.frame(data.table::rbindlist(PlayersList))</code></pre>
-<br><p>Next I want to inspect the data to see what kind of information we
+<p class="" style="margin: 4px;"></p><p>Next I want to inspect the data to see what kind of information we
 have:</p>
 <br>
 <pre class="r"><code># View first rows of data
