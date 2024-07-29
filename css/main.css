@@ -106,3 +106,8 @@ subtitle {
     line-height: 40px; 
     color: #434b5e;
 }
+
+br {
+   display: block;
+   margin: 10px 0;
+}
