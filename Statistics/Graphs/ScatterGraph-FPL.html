@@ -556,20 +556,20 @@ have:</p>
 events like goals and clean sheets, statistics like xG, match info like
 kick-off time and opponent, and FPL-related data like price and
 position. So there is lots of information to make graphs from!</p>
-<br><p>Before making any plots, I usually like to define a theme, which
+<p>Before making any plots, I usually like to define a theme, which
 basically just changes the font style of all my plots so they all match.
 Here is my theme:</p>
 <br>
 <pre class="r"><code>theme &lt;- theme_classic() + theme(text = element_text(size = 12, family=&#39;Radio Canada Big&#39;))</code></pre>
 <br><p>Here, <bold>theme_classic()</bold> gives the plot a minimalistic
 style, while <bold>element_text()</bold> modifies the font.</p>
-<br><h2>
+<h2>
 <u>Scatter Plot</u>: Are Price and Total Points Related?
 </h2>
-<br><p>To assess whether FPL price and total points are related, I could
+<p>To assess whether FPL price and total points are related, I could
 plot the starting price of a player against the total points scored
 across the whole season.</p>
-<br><p>To do this, I first need to manipulate the data to get this
+<p>To do this, I first need to manipulate the data to get this
 information. Using the dplyr <bold>%&gt;%</bold> (pipe) operator, I can
 filter the full dataset to get the GW1 prices for each player, and then
 group all the gameweeks together to get the total points for each
