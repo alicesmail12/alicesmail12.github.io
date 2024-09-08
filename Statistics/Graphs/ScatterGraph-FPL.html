@@ -380,6 +380,18 @@ margin-inline-start: 0px;
 margin-inline-end: 0px;
 padding-inline-start: 0px;
 }
+
+.codebutton {
+  background-color: #04AA6D;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+}
 	
 </style>
 
@@ -414,7 +426,7 @@ download my data from vaastav’s Fantasy-Premier-League GitHub page. This
 repository stores lots of FPL data from the last few seasons, which is
 very helpful!</p>
 
-<p><button onclick="javascript:ShowHide('HiddenDiv')" type="button">Code</button></p>
+<p><button onclick="javascript:ShowHide('HiddenDiv')" type="codebutton">Code</button></p>
 <div class="mid" id="HiddenDiv" style="display: none;">
 
 <pre class="r"><code># Load the tidyverse
@@ -439,11 +451,20 @@ else{document.getElementById(divId).style.display = 'none';}}
 <p>Next I want to inspect the data to see what kind of information we
 have:</p>
 
-<p><button onclick="javascript:ShowHide('HiddenDiv2')" type="button">Code</button></p>
+<p><button onclick="javascript:ShowHide('HiddenDiv2')" type="codebutton">Code</button></p>
 <div class="mid" id="HiddenDiv2" style="display: none;">
 	
 <pre class="r"><code># View player data
 knitr::kable(head(PlayerData)[1:10])</code></pre>
+
+</div>
+<script type="text/javascript">// <![CDATA[
+function ShowHide(divId)
+{if(document.getElementById(divId).style.display == 'none'){
+document.getElementById(divId).style.display='block';}
+else{document.getElementById(divId).style.display = 'none';}}
+// ]]></script>
+
 <table style="width:100%;">
 <colgroup>
 <col width="15%" />
@@ -546,6 +567,10 @@ knitr::kable(head(PlayerData)[1:10])</code></pre>
 </tr>
 </tbody>
 </table>
+
+<p><button onclick="javascript:ShowHide('HiddenDiv3')" type="codebutton">Code</button></p>
+<div class="mid" id="HiddenDiv3" style="display: none;">
+	
 <pre class="r"><code># Get column names of player data
 colnames(PlayerData)</code></pre>
 <pre><code>##  [1] &quot;name&quot;                       &quot;position&quot;                  
@@ -569,7 +594,6 @@ colnames(PlayerData)</code></pre>
 ## [37] &quot;transfers_out&quot;              &quot;value&quot;                     
 ## [39] &quot;was_home&quot;                   &quot;yellow_cards&quot;</code></pre>
 
-</div>
 <script type="text/javascript">// <![CDATA[
 function ShowHide(divId)
 {if(document.getElementById(divId).style.display == 'none'){
