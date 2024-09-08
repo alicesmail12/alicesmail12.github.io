@@ -427,8 +427,21 @@ PlayersList &lt;- lapply(filenames, function(x) {
   data &lt;- subset(read_csv(url(paste0(github, &quot;gws/&quot;,x,&quot;.csv&quot;))), minutes&gt;0)
   return(data)}) 
 PlayerData &lt;- data.frame(data.table::rbindlist(PlayersList))</code></pre>
+
+</div>
+<script type="text/javascript">// <![CDATA[
+function ShowHide(divId)
+{if(document.getElementById(divId).style.display == 'none'){
+document.getElementById(divId).style.display='block';}
+else{document.getElementById(divId).style.display = 'none';}}
+// ]]></script>
+
 <p>Next I want to inspect the data to see what kind of information we
 have:</p>
+
+<p><button onclick="javascript:ShowHide('HiddenDiv2')" type="button">Code</button></p>
+<div class="mid" id="HiddenDiv2" style="display: none;">
+	
 <pre class="r"><code># View player data
 knitr::kable(head(PlayerData)[1:10])</code></pre>
 <table style="width:100%;">
