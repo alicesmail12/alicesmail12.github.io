@@ -425,7 +425,7 @@ download my data from vaastav’s Fantasy-Premier-League GitHub page. This
 repository stores lots of FPL data from the last few seasons, which is
 very helpful!</p>
 
-<p><button onclick="javascript:ShowHide('HiddenDiv')" type="button">Code</button></p>
+<p><button onclick="javascript:ShowHide('HiddenDiv')" type="button">View Code</button></p>
 <div class="mid" id="HiddenDiv" style="display: none;">
 
 <pre class="r"><code># Load the tidyverse
@@ -450,7 +450,7 @@ else{document.getElementById(divId).style.display = 'none';}}
 <p>Next I want to inspect the data to see what kind of information we
 have:</p>
 
-<p><button onclick="javascript:ShowHide('HiddenDiv2')" type="button">Code</button></p>
+<p><button onclick="javascript:ShowHide('HiddenDiv2')" type="button">View Code</button></p>
 <div class="mid" id="HiddenDiv2" style="display: none;">
 	
 <pre class="r"><code># View player data
@@ -611,7 +611,7 @@ bits of information to plot. Using the dplyr <bold>%&gt;%</bold> (pipe)
 operator, I can group all the player information across all gameweeks
 together to get the total xG and total goals scored for each player.</p>
 
-<p><button onclick="javascript:ShowHide('HiddenDiv3')" type="button">Code</button></p>
+<p><button onclick="javascript:ShowHide('HiddenDiv3')" type="button">View Code</button></p>
 <div class="mid" id="HiddenDiv3" style="display: none;">
 	
 <pre class="r"><code># Get total xG and total goals scored for all players
@@ -686,7 +686,7 @@ else{document.getElementById(divId).style.display = 'none';}}
 ggplot(). Then I can add <bold>geom_point()</bold> to make a scatter
 graph (and add my theme).</p>
 
-<p><button onclick="javascript:ShowHide('HiddenDiv4')" type="button">Code</button></p>
+<p><button onclick="javascript:ShowHide('HiddenDiv4')" type="button">View Code</button></p>
 <div class="mid" id="HiddenDiv4" style="display: none;">
 	
 <pre class="r"><code># Basic plot
@@ -712,7 +712,7 @@ the players by their position and use <bold>scale_color_manual()</bold>
 to change the colour palette. I can also change the alpha level
 (transparency) and size of the points.</p>
 
-<p><button onclick="javascript:ShowHide('HiddenDiv5')" type="button">Code</button></p>
+<p><button onclick="javascript:ShowHide('HiddenDiv5')" type="button">View Code</button></p>
 <div class="mid" id="HiddenDiv5" style="display: none;">
 	
 <pre class="r"><code># Plot with colours
@@ -737,7 +737,7 @@ add some labels so I can see who the biggest xG underperformers were
 last year. To do this I could minus xG from total goals scored to get a
 delta score:</p>
 
-<p><button onclick="javascript:ShowHide('HiddenDiv6')" type="button">Code</button></p>
+<p><button onclick="javascript:ShowHide('HiddenDiv6')" type="button">View Code</button></p>
 <div class="mid" id="HiddenDiv6" style="display: none;">
 	
 <pre class="r"><code># Get difference between goals scored and xG
@@ -826,7 +826,7 @@ else{document.getElementById(divId).style.display = 'none';}}
 change the point size &amp; colour to reflect the delta value and total
 goals scored for each player.</p>
 
-<p><button onclick="javascript:ShowHide('HiddenDiv7')" type="button">Code</button></p>
+<p><button onclick="javascript:ShowHide('HiddenDiv7')" type="button">View Code</button></p>
 <div class="mid" id="HiddenDiv7" style="display: none;">
 	
 <pre class="r"><code># Get 30 players with most goals scored to plot
@@ -869,7 +869,7 @@ points. I can use the package <bold>ggrepel</bold> and the argument
 <bold>nudge_x</bold> to try and space the labels out so they are more
 readable:</p>
 
-<p><button onclick="javascript:ShowHide('HiddenDiv8')" type="button">Code</button></p>
+<p><button onclick="javascript:ShowHide('HiddenDiv8')" type="button">View Code</button></p>
 <div class="mid" id="HiddenDiv8" style="display: none;">
 	
 <pre class="r"><code># Load ggrepel
