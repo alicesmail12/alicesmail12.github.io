@@ -413,6 +413,10 @@ use (ggplot2 &amp; dplyr, which are part of the tidyverse package), and
 download my data from vaastav’s Fantasy-Premier-League GitHub page. This
 repository stores lots of FPL data from the last few seasons, which is
 very helpful!</p>
+
+<p><button onclick="javascript:ShowHide('HiddenDiv')" type="button">Code</button></p>
+<div class="mid" id="HiddenDiv" style="display: none;">
+
 <pre class="r"><code># Load the tidyverse
 library(tidyverse)
 
@@ -551,6 +555,15 @@ colnames(PlayerData)</code></pre>
 ## [35] &quot;transfers_balance&quot;          &quot;transfers_in&quot;              
 ## [37] &quot;transfers_out&quot;              &quot;value&quot;                     
 ## [39] &quot;was_home&quot;                   &quot;yellow_cards&quot;</code></pre>
+
+</div>
+<script type="text/javascript">// <![CDATA[
+function ShowHide(divId)
+{if(document.getElementById(divId).style.display == 'none'){
+document.getElementById(divId).style.display='block';}
+else{document.getElementById(divId).style.display = 'none';}}
+// ]]></script>
+	
 <p>I can see that there is a lot of information for each player in each gameweek, including
 events like goals and clean sheets, statistics like xG, match info like
 kick-off time and opponent, and FPL-related data like price and
