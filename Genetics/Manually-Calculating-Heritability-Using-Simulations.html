@@ -912,10 +912,12 @@ intSE &lt;- step1IntSE
 h2Est &lt;- H2Estimate(jknifeEst2, M, N)
 h2EstSE &lt;- H2Estimate(jknifeSE2, M, N)
 
-message(paste0(&#39;Intercept: &#39;, round(int, 3), &#39; (&#39;, round(intSE, 3), &#39;)&#39;))</code></pre>
-<pre><code>## Intercept: 0.165 (0.022)</code></pre>
-<pre class="r"><code>message(paste0(&#39;h2: &#39;, round(h2Est, 3), &#39; (&#39;, round(h2EstSE, 3), &#39;)&#39;))</code></pre>
-<pre><code>## h2: 0.221 (0.005)</code></pre>
+message(paste0(&#39;Intercept: &#39;, round(int, 3), &#39; (&#39;, round(intSE, 3), &#39;)&#39;))
+message(paste0(&#39;h2: &#39;, round(h2Est, 3), &#39; (&#39;, round(h2EstSE, 3), &#39;)&#39;))</code></pre>
+
+<pre><code>## Intercept: 0.165 (0.022)
+## h2: 0.221 (0.005)</code></pre>
+	
 <p>We can also use these values to plot an LD score regression plot:</p>
 <pre class="r"><code># Group into bins and get summary statistics
 SimBins &lt;- Sim1 %&gt;% 
