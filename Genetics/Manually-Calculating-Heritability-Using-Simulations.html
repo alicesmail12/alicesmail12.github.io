@@ -784,6 +784,10 @@ else{document.getElementById(divId).style.display = 'none';}}
 <p>Now that we have an estimate for the intercept, we can use all SNPs
 (including those with Z2 above 30) and a constrained intercept to
 estimate the slope gradient (so we can find h2).</p>
+
+<p><button onclick="javascript:ShowHide('HiddenDiv5')" type="button">View Code</button></p>
+<div class="mid" id="HiddenDiv5" style="display: none;">
+	
 <pre class="r"><code># LD scores as a matrix
 LD &lt;- Sim1$L2 
 LDMat &lt;- round(as.matrix(LD),4) 
@@ -819,12 +823,25 @@ for(i in 1:precision){
   h2W &lt;- H2Estimate(regCoef2, M, N)
   message(paste0(&#39;Reweighted h2: &#39;, h2W))
 }</code></pre>
+	
+</div>
+<script type="text/javascript">// <![CDATA[
+function ShowHide(divId)
+{if(document.getElementById(divId).style.display == 'none'){
+document.getElementById(divId).style.display='block';}
+else{document.getElementById(divId).style.display = 'none';}}
+// ]]></script>
+	
 <pre><code>## Reweighted h2: 0.244412424553641
 ## Reweighted h2: 0.220660209343455
 ## Reweighted h2: 0.221389197937769
 ## Reweighted h2: 0.221364588090334</code></pre>
 <p>We also need to estimate the standard error of the slope - we can
 also do this using the jackknife method.</p>
+
+<p><button onclick="javascript:ShowHide('HiddenDiv6')" type="button">View Code</button></p>
+<div class="mid" id="HiddenDiv6" style="display: none;">
+	
 <pre class="r"><code>JackknifeSlope &lt;- function(LDMat, LDscoresIntW, ChiSqStatsW){
 
   # Get number of SNPs, and split into 200 blocks
@@ -875,6 +892,15 @@ also do this using the jackknife method.</p>
 Sim1JKSlope &lt;- JackknifeSlope(LDMat, LDscoresIntW, ChiSqStatsW)
 jknifeSE2 &lt;- Sim1JKSlope[1]
 jknifeEst2 &lt;- Sim1JKSlope[2]</code></pre>
+
+</div>
+<script type="text/javascript">// <![CDATA[
+function ShowHide(divId)
+{if(document.getElementById(divId).style.display == 'none'){
+document.getElementById(divId).style.display='block';}
+else{document.getElementById(divId).style.display = 'none';}}
+// ]]></script>
+	
 <p>Now that we have estimates for the slope and intercept, and we have
 used a block jackknife method to estimate their respective SEs, we can
 identify our final estimates:</p>
@@ -915,11 +941,16 @@ print(z)</code></pre>
 <pre class="r"><code>p &lt;- pnorm(z, lower.tail=FALSE)
 print(p)</code></pre>
 <pre><code>## [1] 0</code></pre>
+	
 <p>A z-score of 45 is pretty extreme, and with a p-value of 0 we can
 confidently say that our h2 value is significantly different from 0,
 meaning we have a heritable trait.</p>
 <p>Now we can repeat the whole process with simulated data that does not
 have correlated LD-X2 statistics, and see how the outcome changes.</p>
+
+<p><button onclick="javascript:ShowHide('HiddenDiv7')" type="button">View Code</button></p>
+<div class="mid" id="HiddenDiv7" style="display: none;">
+	
 <pre class="r"><code># Second dataset
 set.seed(1)
 Sim2 &lt;- data.frame(matrix(vector(), 500000, 3, dimnames=list(c(), c(&quot;SNP&quot;, &quot;L2&quot;, &#39;beta&#39;))), stringsAsFactors=F)
@@ -1011,10 +1042,21 @@ intSE &lt;- step1IntSE
 h2Est &lt;- H2Estimate(jknifeEst2, M, N)
 h2EstSE &lt;- H2Estimate(jknifeSE2, M, N)
 
-print(paste0(&#39;Intercept: &#39;, round(int, 3), &#39; (&#39;, round(intSE, 3), &#39;)&#39;))</code></pre>
-<pre><code>## [1] &quot;Intercept: 4.752 (0.016)&quot;</code></pre>
-<pre class="r"><code>print(paste0(&#39;h2: &#39;, round(h2Est, 5), &#39; (&#39;, round(h2EstSE, 5), &#39;)&#39;))</code></pre>
-<pre><code>## [1] &quot;h2: -0.00035 (0.00035)&quot;</code></pre>
+print(paste0(&#39;Intercept: &#39;, round(int, 3), &#39; (&#39;, round(intSE, 3), &#39;)&#39;))
+print(paste0(&#39;h2: &#39;, round(h2Est, 5), &#39; (&#39;, round(h2EstSE, 5), &#39;)&#39;))</code></pre>
+	
+</div>
+<script type="text/javascript">// <![CDATA[
+function ShowHide(divId)
+{if(document.getElementById(divId).style.display == 'none'){
+document.getElementById(divId).style.display='block';}
+else{document.getElementById(divId).style.display = 'none';}}
+// ]]></script>
+	
+
+<pre><code>## [1] &quot;Intercept: 4.752 (0.016)&quot;
+## [1] &quot;h2: -0.00035 (0.00035)&quot;</code></pre>
+	
 <p>We can see that with our randomised data with no correlation between
 LD and X2, the estimated h2 score is approximately 0, while the
 intercept is very high - meaning any heritability that is present does
@@ -1038,11 +1080,11 @@ ggplot(SimBins, aes(x=`LD Score Bins`, y=meanchi2))+
 whether the h2 value we obtained is significantly different from 0.</p>
 <pre class="r"><code># Get p-value
 z &lt;- h2Est/h2EstSE
-print(z)</code></pre>
-<pre><code>## [1] -1.022913</code></pre>
-<pre class="r"><code>p &lt;- pnorm(z, lower.tail=FALSE)
+print(z)
+p &lt;- pnorm(z, lower.tail=FALSE)
 print(p)</code></pre>
-<pre><code>## [1] 0.8468256</code></pre>
+<pre><code>## [1] -1.022913
+## [1] 0.8468256</code></pre>
 <p>Our Z-score is not very extreme, and the p-value is near 1, meaning
 we cannot reject the hypothesis that our h2 value is different from 0 -
 our data shows no SNP-heritability.</p>
