@@ -422,10 +422,12 @@ May 2024
 <h2>
 <u>References</u>
 </h2>
+	
 <p>R code on this page is adapted from Heidi Marika Hautakangas’s thesis (2018): <a href="https://helda.helsinki.fi/server/api/core/bitstreams/d1f408d5-7b4a-4f6a-84e8-6eba25b83467/content" class="uri">https://helda.helsinki.fi/server/api/core/bitstreams/d1f408d5-7b4a-4f6a-84e8-6eba25b83467/content</a></p>
 <h2>
-<u>1. Heritability:</u> Polygenic Phenotypes
+<u>Polygenic Phenotypes</u> 
 </h2>
+	
 <p>Some phenotypes arise from a change in one gene: these are known as
 <bold>monogenic</bold> conditions; however, <bold>polygenic</bold>
 conditions are influenced by multiple SNPs across the genome. An example
@@ -463,8 +465,9 @@ else{document.getElementById(divId).style.display = 'none';}}
 <div class="mid" id="HiddenDiv9" style="display: none;">
 	
 <h2>
-<u>2. Heritability:</u> LD Scores
+<u>LD Scores</u> 
 </h2>
+	
 GWAS datasets can provide insight into different genetic phenomena: for
 example, quantifying the <bold>heritability
 (<i>h<sup>2</sup></i>)</bold> of a specific phenotype. In order to
@@ -495,9 +498,11 @@ of the slopes shown above, in order to infer the heritability of each
 trait: if a trait is influenced by several highly penetrant SNPs, which
 have a large effect on the phenotype, the gradient of the regression
 line will be steeper, reflecting a highly heritable trait.</p>
+
 <h2>
-<u>3. Estimating Heritability:</u> LD Score Regression
+<u>LD Score Regression</u> 
 </h2>
+	
 <p>To estimate the SNP-heritability of a trait using GWAS summary
 statistics, we can perform LD score regression, which involves
 regressing <bold>SNP test-statistics</bold> against their <bold>LD
@@ -538,8 +543,9 @@ else{document.getElementById(divId).style.display = 'none';}}
 <div class="mid" id="HiddenDiv8" style="display: none;">
 
 <h2>
-<u>4. Estimating Heritability:</u> LD Score Regression in R
+<u>LD Score Regression in R</u> 
 </h2>
+	
 <p>To demonstrate how heritability can be estimated using LD score
 regression, in the code below I have simulated two seperate datasets:
 one where LD score and beta are highly correlated (reflecting a trait
@@ -585,7 +591,11 @@ the h2 value for this simulated dataset using the following formula:</p>
 <pre class="r"><code>h2Est &lt;- (M*(mean(ChiSq)-1))/(mean(N*LD))
 h2Est</code></pre>
 <pre><code>## [1] 0.2500002</code></pre>
-<p><u>Step 1: Intercept</u></p>
+
+<h2>
+<u>Step 1: Intercept</u>
+</h2>
+	
 <p>To perform LD score regression we need to calculate two components:
 the intercept and the gradient of the slope. In step 1 we will calculate
 the intercept using only data with a chi-squared score below 30. First
@@ -819,7 +829,10 @@ else{document.getElementById(divId).style.display = 'none';}}
 <pre><code>## Step 1 Intercept: 0.165309803162759
 ## Step 1 Intercept SE: 0.0219321086354315</code></pre>
 
-<p><u>Step 2: Slope</u></p>
+<h2>
+<u>Step 2: Slope</u>
+</h2>
+
 <p>Now that we have an estimate for the intercept, we can use all SNPs
 (including those with Z2 above 30) and a constrained intercept to
 estimate the slope gradient (so we can find h2).</p>
