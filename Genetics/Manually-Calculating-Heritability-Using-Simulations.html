@@ -255,14 +255,16 @@ if (window.hljs) {
 
 
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+	
 <style type="text/css">
 @import url(https://fonts.googleapis.com/css2?family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&display=swap);
 
 <link rel="stylesheet" type="text/css" href="/css/main.css">
   
 .main-container {
-margin-left: auto;
-margin-right: 100px;
 }
 img {
 max-width:100%;
@@ -317,8 +319,61 @@ background-color: transparent;
 display: block;
 float: none;
 }
+  
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+border: none;
+display: inline-block;
+border-radius: 4px;
+background-color: transparent;
+}
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+display: block;
+float: none;
+}
 .tabset-dropdown > .nav-tabs > li {
 display: none;
+}
+
+pre {
+display: block;
+padding: 20px;
+margin: 0 0 10px;
+font-size: 15px;
+line-height: 1.5;
+color: #333;
+word-break: break-all;
+word-wrap: break-word;
+background-color: #f7f7f8;
+border: 0px solid #ccc;
+border-radius: 5px;
+}
+
+code, kbd, pre, samp {
+font-family: 'IBM Plex Mono';
+}
+
+.container {
+padding-right: 0px;
+padding-left: 0px;
+margin-right: auto;
+margin-left: auto;
+width: 1200px;
+}
+pre:not([class]) {
+background-color: #434b5e;
+color: #ffffff;
+}
+button {
+  background-color: #04AA6D;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 10px;
+  padding: 5px 10px;
 }
 </style>
 
@@ -341,8 +396,6 @@ display: none;
 		<li><a href="https://alicesmail12.github.io/Genetics">Genetics</a></li>
 	</ul>
 	</nav>
-
-<div class="container">
 
 
 <h1>
@@ -954,10 +1007,6 @@ print(p)</code></pre>
 we cannot reject the hypothesis that our h2 value is different from 0 -
 our data shows no SNP-heritability.</p>
 
-
-
-
-</div>
 
 <script>
 
