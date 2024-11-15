@@ -585,6 +585,10 @@ the heteroscedasticity weight.
 <p>Using these two weights, LD score regression involves iteratively
 re-weighting the slope, using a precision of 4 iterations. The code
 below defines the weighting functions we need:</p>
+
+<p><button onclick="javascript:ShowHide('HiddenDiv2')" type="button">View Code</button></p>
+<div class="mid" id="HiddenDiv2" style="display: none;">
+	
 <pre class="r"><code># Function to get weighting
 GetWeights &lt;- function(h2, LD, wLD, N, M, Int){
   
@@ -620,6 +624,15 @@ Weight &lt;- function(w, x){
 
 # Function to estimate h2 from slope
 H2Estimate &lt;- function(coefficient, M, N){M*coefficient/N}</code></pre>
+
+</div>
+<script type="text/javascript">// <![CDATA[
+function ShowHide(divId)
+{if(document.getElementById(divId).style.display == 'none'){
+document.getElementById(divId).style.display='block';}
+else{document.getElementById(divId).style.display = 'none';}}
+// ]]></script>
+
 <p>Using these functions, we can iteratively re-weight our regression
 slope 4 times, using the crude estimate and an intercept of 1 as a
 starting point:</p>
@@ -736,8 +749,8 @@ psuedovalues.</p>
 }
 
 Sim1JKInt &lt;- JackknifeIntercept(Sim1_30, LDscoresIntW, ChiSqStatsW)</code></pre>
-<pre><code>## Step 1 Intercept: 0.165309803162759</code></pre>
-<pre><code>## Step 1 Intercept SE: 0.0219321086354315</code></pre>
+<pre><code>## Step 1 Intercept: 0.165309803162759
+## Step 1 Intercept SE: 0.0219321086354315</code></pre>
 <pre class="r"><code>step1Int &lt;- Sim1JKInt[1]
 step1IntSE &lt;- Sim1JKInt[2]</code></pre>
 <p><u>Step 2: Slope</u></p>
@@ -779,10 +792,10 @@ for(i in 1:precision){
   h2W &lt;- H2Estimate(regCoef2, M, N)
   message(paste0(&#39;Reweighted h2: &#39;, h2W))
 }</code></pre>
-<pre><code>## Reweighted h2: 0.244412424553641</code></pre>
-<pre><code>## Reweighted h2: 0.220660209343455</code></pre>
-<pre><code>## Reweighted h2: 0.221389197937769</code></pre>
-<pre><code>## Reweighted h2: 0.221364588090334</code></pre>
+<pre><code>## Reweighted h2: 0.244412424553641
+## Reweighted h2: 0.220660209343455
+## Reweighted h2: 0.221389197937769
+## Reweighted h2: 0.221364588090334</code></pre>
 <p>We also need to estimate the standard error of the slope - we can
 also do this using the jackknife method.</p>
 <pre class="r"><code>JackknifeSlope &lt;- function(LDMat, LDscoresIntW, ChiSqStatsW){
