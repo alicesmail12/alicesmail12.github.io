@@ -936,11 +936,11 @@ ggplot(SimBins, aes(x=`LD Score Bins`, y=meanchi2))+
 is significantly different from 0:</p>
 <pre class="r"><code># Get p-value
 z &lt;- h2Est/h2EstSE
-print(z)</code></pre>
-<pre><code>## [1] 45.04671</code></pre>
-<pre class="r"><code>p &lt;- pnorm(z, lower.tail=FALSE)
+print(z)
+p &lt;- pnorm(z, lower.tail=FALSE)
 print(p)</code></pre>
-<pre><code>## [1] 0</code></pre>
+<pre><code>## [1] 45.04671
+## [1] 0</code></pre>
 	
 <p>A z-score of 45 is pretty extreme, and with a p-value of 0 we can
 confidently say that our h2 value is significantly different from 0,
