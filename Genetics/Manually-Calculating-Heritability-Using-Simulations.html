@@ -636,6 +636,10 @@ else{document.getElementById(divId).style.display = 'none';}}
 <p>Using these functions, we can iteratively re-weight our regression
 slope 4 times, using the crude estimate and an intercept of 1 as a
 starting point:</p>
+
+<p><button onclick="javascript:ShowHide('HiddenDiv3')" type="button">View Code</button></p>
+<div class="mid" id="HiddenDiv3" style="display: none;">
+	
 <pre class="r"><code>h2W &lt;- h2Est
 regInt &lt;- 1
 precision &lt;- 4
@@ -664,6 +668,15 @@ for(i in 1:precision){
   h2W &lt;- H2Estimate(regCoef, M, N)
   message(paste0(&#39;Reweighted Intercept: &#39;, regInt))
 }</code></pre>
+
+</div>
+<script type="text/javascript">// <![CDATA[
+function ShowHide(divId)
+{if(document.getElementById(divId).style.display == 'none'){
+document.getElementById(divId).style.display='block';}
+else{document.getElementById(divId).style.display = 'none';}}
+// ]]></script>
+	
 <pre><code>## Reweighted Intercept: 0.0723155079498401
 ## Reweighted Intercept: 0.176213720052027
 ## Reweighted Intercept: 0.154587545181594
@@ -676,6 +689,10 @@ pseudovalues are computed - these are the difference between the
 estimate from all of the data and the jackknife estimate. The standard
 error can be estimated from the standard deviation of the
 psuedovalues.</p>
+
+<p><button onclick="javascript:ShowHide('HiddenDiv4')" type="button">View Code</button></p>
+<div class="mid" id="HiddenDiv4" style="display: none;">
+	
 <pre class="r"><code>JackknifeIntercept &lt;- function(Sim_30, LDscoresIntW, ChiSqStatsW){
   
   # First we get the number of SNPs with Z2&lt;30
@@ -748,11 +765,21 @@ psuedovalues.</p>
   return(c(step1Int, step1IntSE))
 }
 
-Sim1JKInt &lt;- JackknifeIntercept(Sim1_30, LDscoresIntW, ChiSqStatsW)</code></pre>
+Sim1JKInt &lt;- JackknifeIntercept(Sim1_30, LDscoresIntW, ChiSqStatsW)
+step1Int &lt;- Sim1JKInt[1]
+step1IntSE &lt;- Sim1JKInt[2]</code></pre>
+	
+</div>
+<script type="text/javascript">// <![CDATA[
+function ShowHide(divId)
+{if(document.getElementById(divId).style.display == 'none'){
+document.getElementById(divId).style.display='block';}
+else{document.getElementById(divId).style.display = 'none';}}
+// ]]></script>
+	
 <pre><code>## Step 1 Intercept: 0.165309803162759
 ## Step 1 Intercept SE: 0.0219321086354315</code></pre>
-<pre class="r"><code>step1Int &lt;- Sim1JKInt[1]
-step1IntSE &lt;- Sim1JKInt[2]</code></pre>
+
 <p><u>Step 2: Slope</u></p>
 <p>Now that we have an estimate for the intercept, we can use all SNPs
 (including those with Z2 above 30) and a constrained intercept to
