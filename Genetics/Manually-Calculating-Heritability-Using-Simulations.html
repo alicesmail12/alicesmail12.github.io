@@ -375,6 +375,17 @@ button {
   border-radius: 10px;
   padding: 5px 10px;
 }
+button2 {
+  background-color: #f7f7f8;
+  border: none;
+  color: #434b5e;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 10px;
+  padding: 5px 10px;
+  width: 100%;
+}
 </style>
 
 <!-- code folding -->
@@ -404,6 +415,10 @@ Manually Calculating Heritability
 <p>
 May 2024
 </p>
+
+<p><button onclick="javascript:ShowHide('HiddenDiv1')" type="button2">View Code</button></p>
+<div class="mid" id="HiddenDiv1" style="display: none;">
+
 <h2>
 <u>References</u>
 </h2>
@@ -1091,9 +1106,16 @@ print(p)</code></pre>
 we cannot reject the hypothesis that our h2 value is different from 0 -
 our data shows no SNP-heritability.</p>
 
+</div>
+<script type="text/javascript">// <![CDATA[
+function ShowHide(divId)
+{if(document.getElementById(divId).style.display == 'none'){
+document.getElementById(divId).style.display='block';}
+else{document.getElementById(divId).style.display = 'none';}}
+// ]]></script>
 
 <script>
-
+	
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
   $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
@@ -1105,6 +1127,7 @@ $(document).ready(function () {
 
 </script>
 
+	
 <!-- tabsets -->
 
 <script>
