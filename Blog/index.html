@@ -1,0 +1,80 @@
+---
+layout: default
+title: Blog
+---
+<style>
+.main-container {
+margin-left: auto;
+margin-right: auto;
+}
+    
+.portfolio1 {
+    display: grid;
+    grid-template-rows: 80px 80px 50px;
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 15px;
+    column-gap: 20px
+}
+
+.portfolio2 {
+    display: grid;
+    grid-template-rows: 80px 80px;
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 15px;
+    column-gap: 20px
+}
+
+.imagefit {
+    width: 20%;
+    height: 100%;
+    border-radius: 5px 0px 0px 0px;
+    transition: all .25s ease;
+}
+
+.button {
+    display: flex;
+    padding: 0px;
+    background: 'black';
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    overflow: hidden;
+    font-family: 'Radio Canada Big';
+    font-size: 24px;
+    font-weight: 500;
+    cursor: pointer;
+    width: 100%;
+    height: 85px;
+    text-align: center;
+    background: #eeeff1;
+    color: #434b5e;
+    transition: all .25s ease;
+}
+
+.button:hover{
+    background: #fe5f55;
+    color: white;
+    transform: scaleX(1.05) scaleY(1.05);
+}
+
+buttontext{
+    padding: 27.5px 20px;
+}
+
+a:hover {
+    text-decoration: none;
+}
+    
+</style>
+
+<div class="container">
+<h1>2024</h1>
+<body>
+    <div class="portfolio1">
+        <div class="grid-item">
+            <a href="https://alicesmail12.github.io/Blog/Manually-Calculating-Heritability-Using-Simulations.html"  type="button" class="button">
+                <buttontext>Manually Calculating Heritability Using Simulations</buttontext></a>
+        </div>
+    </div>
+</body>
+</div>
