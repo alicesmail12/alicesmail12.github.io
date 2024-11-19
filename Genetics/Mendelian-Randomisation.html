@@ -8,9 +8,6 @@
 <meta name="generator" content="pandoc" />
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
-
-
-
 <title>Mendelian Randomisation</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
@@ -272,7 +269,6 @@ padding: 0;
 }
 </style>
 
-
 <!-- tabsets -->
 
 <style type="text/css">
@@ -359,24 +355,17 @@ background-color: #434b5e;
 color: #ffffff;
 }
 
-p {
-display: block;
-margin-block-start: 1em;
-margin-block-end: 1em;
-margin-inline-start: 0px;
-margin-inline-end: 0px;
-}
-
 button {
-  background-color: #04AA6D;
-  border: none;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  border-radius: 10px;
-  padding: 5px 10px;
+background-color: #04AA6D;
+border: none;
+color: white;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+border-radius: 10px;
+padding: 5px 10px;
 }
+	
 button2 {
 background-color: #f7f7f8;
 border: none;
@@ -421,6 +410,9 @@ transition: all .25s ease;
 Mendelian Randomisation
 </h1>
 
+<p><button2 onclick="javascript:ShowHide('HiddenDiv1')" type="button2">Introduction to MR</button2></p>
+<div class="mid" id="HiddenDiv1" style="display: none;">
+	
 <h2>
 <u>References</u>
 </h2>
@@ -437,7 +429,7 @@ population relevance of 95 loci for blood lipids. Nature 466(7307),
 </ol>
 	
 <h2>
-<u>Introduction</u>
+<u>What is MR?</u>
 </h2>
 	
 Mendelian Randomisation (MR) is a method that uses instrumental
@@ -450,6 +442,7 @@ GWAS datasets for two different traits - a method known as
 <h2>
 <u>MR Rationale</u>
 </h2>
+	
 <p><bold>Mendelian inheritance</bold> concerns the random allocation of
 genetic variants to offspring independently of environmental factors and
 other genetic variables (with the exception of variants that are
@@ -519,7 +512,17 @@ proteomic analysis of tissues from patients with the disease could aid
 validation of an association between increased/decreased molecular
 levels and the disease.</p>
 
+</div>
+<script type="text/javascript">// <![CDATA[
+function ShowHide(divId)
+{if(document.getElementById(divId).style.display == 'none'){
+document.getElementById(divId).style.display='block';}
+else{document.getElementById(divId).style.display = 'none';}}
+// ]]></script>
 
+<p><button2 onclick="javascript:ShowHide('HiddenDiv1')" type="button2">Performing MR</button2></p>
+<div class="mid" id="HiddenDiv1" style="display: none;">
+	
 <p>We can perform an MR analysis on any two traits that have been
 analysed using a GWAS. The following example looks at whether plasma
 triglyceride level might have a causal effect on systolic blood
@@ -534,9 +537,11 @@ pressure.</p>
 loaded:</p>
 <pre class="r"><code>library(RadialMR)
 library(TwoSampleMR)</code></pre>
+	
 <h2>
 <u>2. Loading Data</u>
 </h2>
+	
 <p>First both GWAS datasets are loaded into R, and any information that
 is missing is added:</p>
 <pre class="r"><code># Set wd
@@ -551,9 +556,11 @@ sBP &lt;- data.table::fread(&quot;./GWASFiles/GCST90029011_buildGRCh37.tsv&quot;
 TriG$Phenotype &lt;- &#39;TriG&#39;
 TriG$samplesize &lt;- 96598
 sBP$Phenotype &lt;- &#39;sBP&#39;</code></pre>
+	
 <h2>
 <u>3. Filtering Exposure Data</u>
 </h2>
+	
 <p>Next we can filter our exposure GWAS to obtain SNPs that are strongly
 associated with plasma triglyceride level:</p>
 <pre class="r"><code># Get instrumental variables for TriG
@@ -570,6 +577,7 @@ TriGMR &lt;- TwoSampleMR::format_data(snps=NULL, type=&#39;exposure&#39;, TriGSi
 <h2>
 <u>4. Clumping</u>
 </h2>
+	
 <p>With the filtered and formatted data, we can perform <bold>clumping</bold>, 
 which is the removal of SNPs in high LD so that the most significant SNP per region is retained. This
 is a very important step: SNPs in high linkage disequilibrium with significant SNPs will introduce overcounting and will bias the regression. For MR, we
@@ -578,9 +586,11 @@ that performs clumping on the set of SNPs:</p>
 <pre class="r"><code># LD clumping
 options(ieugwasr_api=&#39;gwas-api.mrcieu.ac.uk/&#39;)
 TriGMRClumped &lt;- clump_data(TriGMR, clump_kb=500, clump_r2=0.01)</code></pre>
+
 <h2>
 <u>5. Removing the MHC Region</u>
 </h2>
+
 <p>Another step we need to take here is removing any <bold>MHC SNPs</bold>, due to
 the complex LD patterns in this region. The exposure GWAS does not
 contain information on chromosome &amp; position, so we will filter the
@@ -604,14 +614,17 @@ sBPMR &lt;- TwoSampleMR::format_data(snps=TriGMRClumped$SNP, type=&#39;outcome&#
 <h2>
 <u>6. Harmonisation</u>
 </h2>
+
 <p><bold>harmonise_data()</bold> harmonises the two datasets: this makes
 sure the alleles across both datasets are aligned correctly.</p>
 <pre class="r"><code># Harmonise
 harm &lt;- harmonise_data(exposure_dat=TriGMRClumped, outcome_dat=sBPMR)</code></pre>
+
 <h2>
 <u>7. MR</u>
 </h2>
-Now we perform MR! There are several different methods that can be used
+
+There are several different methods that can be used
 to perform MR.
 <ul>
 <li>
@@ -1078,6 +1091,13 @@ variants associated with exposure trait. It may be the case that this MR
 analysis was underpowered, relative to applying LCV, to detect a casual
 effect.</p>
 
+</div>
+<script type="text/javascript">// <![CDATA[
+function ShowHide(divId)
+{if(document.getElementById(divId).style.display == 'none'){
+document.getElementById(divId).style.display='block';}
+else{document.getElementById(divId).style.display = 'none';}}
+// ]]></script>
 
 <script>
 
