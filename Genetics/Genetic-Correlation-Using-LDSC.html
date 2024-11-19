@@ -618,7 +618,7 @@ $SOFTWARE/munge_sumstats.py \
 --snp SNP \
 --merge-alleles $WORKING/GWASFiles/w_hm3.snplist \
 --out $WORKING/BMI</code></pre>
-<p>To check our files were munged without any issues, we can check the
+<p>To check the files were munged without any issues, I can check the
 log:</p>
 <pre class="bash"><code>cat $WORKING/BMI.log</code></pre>
 <pre><code>## *********************************************************************
@@ -644,9 +644,9 @@ log:</p>
 ## beta:    [linear/logistic] regression coefficient (0 --&gt; no effect; above 0 --&gt; A1 is trait/risk increasing)
 ## effect_allele:   Allele 1, interpreted as ref allele for signed sumstat.
 ## 
-## Reading list of SNPs for allele merge from /Users/alicesmail/Desktop/KCL/LCV/w_hm3.snplist
+## Reading list of SNPs for allele merge from w_hm3.snplist
 ## Read 1217311 SNPs for allele merge.
-## Reading sumstats from /Users/alicesmail/Desktop/KCL/LCV/GCST90428119.tsv.gz into memory 5000000 SNPs at a time.
+## Reading sumstats from GCST90428119.tsv.gz into memory 5000000 SNPs at a time.
 ## Read 18895667 SNPs from --sumstats file.
 ## Removed 16799176 SNPs not in --merge-alleles.
 ## Removed 885937 SNPs with missing values.
@@ -659,7 +659,7 @@ log:</p>
 ## Removed 0 SNPs with N &lt; 228377.333333 (847749 SNPs remain).
 ## Median value of beta was 1.96177e-05, which seems sensible.
 ## Removed 1649 SNPs whose alleles did not match --merge-alleles (846100 SNPs remain).
-## Writing summary statistics for 1217311 SNPs (846100 with nonmissing beta) to /Users/alicesmail/Desktop/KCL/LCV/BMI.sumstats.gz.
+## Writing summary statistics for 1217311 SNPs (846100 with nonmissing beta) to BMI.sumstats.gz.
 ## 
 ## Metadata:
 ## Mean chi^2 = 2.6
@@ -669,8 +669,7 @@ log:</p>
 ## 
 ## Conversion finished at Mon Jun 10 16:54:59 2024
 ## Total time elapsed: 49.88s</code></pre>
-Lots of information is contained in the log output for BMI. For example,
-we can see:
+Lots of information is contained in the log output for BMI. For example:
 <ul>
 <li>
 There are <bold>5312</bold> SNPs significantly associated with BMI.
@@ -691,9 +690,9 @@ The output file contains <bold>846,100 SNPs</bold> with beta values.
 </li>
 </ul>
 <h2>
-<u>2d. Performing Genetic Correlation Analysis</u>
+<u>Performing Genetic Correlation Analysis</u>
 </h2>
-<p>If we are happy that our data has been correctly munged, we can also
+<p>If the data has been correctly munged, I can also
 use LDSC to perform genetic correlation analysis:</p>
 <pre class="bash"><code># Get genetic correlation between BMI &amp; T2D
 $SOFTWARE/ldsc.py \
@@ -701,7 +700,7 @@ $SOFTWARE/ldsc.py \
 --ref-ld-chr $WORKING/eur_w_ld_chr/ \
 --w-ld-chr $WORKING/eur_w_ld_chr/ \
 --out $WORKING/BMI_T2D </code></pre>
-Here we use some new flags:
+Here I can use some new flags:
 <ul>
 <li>
 <bold>–rg</bold>: specifies the two munged GWAS files
@@ -771,14 +770,12 @@ files for separate chromosomes (eur_w_ld_chr)
 ## Z-score: 15.9808
 ## P: 1.7394e-57
 ## 
-## 
 ## Summary of Genetic Correlation Results
 ##               p1               p2      rg     se        z           p  h2_obs  h2_obs_se  h2_int  h2_int_se  gcov_int  gcov_int_se
 ##  BMI.sumstats.gz  T2D.sumstats.gz  0.5601  0.035  15.9808  1.7394e-57  0.0442     0.0031  1.0391     0.0132    0.1488       0.0092
-## 
 ## Analysis finished at Mon Jun 10 16:59:44 2024
 ## Total time elapsed: 8.88s</code></pre>
-From the log output we can see:
+From the log output I can see:
 <ul>
 <li>
 <bold>816475 SNPs</bold> were used for the genetic correlation analysis.
@@ -808,8 +805,8 @@ else{document.getElementById(divId).style.display = 'none';}}
 <h2>
 <u>Estimating Genetic Correlation for Tea Drinking &amp; Height</u>
 </h2>
-<p>We can repeat our workflow for two traits that we suspect might not
-be correlated, in order to see how our results differ:</p>
+<p>I can repeat this workflow for two traits that might not
+be correlated, in order to see how the results differ:</p>
 <pre class="bash"><code>#!/bin/bash
 
 # Define working spaces
@@ -871,7 +868,8 @@ $SOFTWARE/ldsc.py \
 --out $WORKING/Tea_Height \
 --rg $WORKING/GWASFiles/TeaMHC.sumstats.gz,$WORKING/GWASFiles/HeightMHC.sumstats.gz \
 --w-ld-chr $WORKING/eur_w_ld_chr/ </code></pre>
-<p>We can inspect the log output:</p>
+
+<p>I can inspect the log output:</p>
 <pre class="bash"><code>cat $WORKING/Tea_Height.log</code></pre>
 <pre><code>## *********************************************************************
 ## * LD Score Regression (LDSC)
@@ -888,17 +886,17 @@ $SOFTWARE/ldsc.py \
 ## --w-ld-chr /Users/alicesmail/Desktop/KCL/LCV/eur_w_ld_chr/ 
 ## 
 ## Beginning analysis at Tue Jun 25 11:06:09 2024
-## Reading summary statistics from /Users/alicesmail/Desktop/KCL/LCV/GWASFiles/TeaMHC.sumstats.gz ...
+## Reading summary statistics from TeaMHC.sumstats.gz ...
 ## Read summary statistics for 1153397 SNPs.
-## Reading reference panel LD Score from /Users/alicesmail/Desktop/KCL/LCV/eur_w_ld_chr/[1-22] ... (ldscore_fromlist)
+## Reading reference panel LD Score from eur_w_ld_chr/[1-22] ... (ldscore_fromlist)
 ## Read reference panel LD Scores for 1290028 SNPs.
 ## Removing partitioned LD Scores with zero variance.
-## Reading regression weight LD Score from /Users/alicesmail/Desktop/KCL/LCV/eur_w_ld_chr/[1-22] ... (ldscore_fromlist)
+## Reading regression weight LD Score from eur_w_ld_chr/[1-22] ... (ldscore_fromlist)
 ## Read regression weight LD Scores for 1290028 SNPs.
 ## After merging with reference panel LD, 1141281 SNPs remain.
 ## After merging with regression SNP LD, 1141281 SNPs remain.
 ## Computing rg for phenotype 2/2
-## Reading summary statistics from /Users/alicesmail/Desktop/KCL/LCV/GWASFiles/HeightMHC.sumstats.gz ...
+## Reading summary statistics from HeightMHC.sumstats.gz ...
 ## Read summary statistics for 1217311 SNPs.
 ## After merging with summary statistics, 1141281 SNPs remain.
 ## 1021233 SNPs with valid alleles.
@@ -931,10 +929,9 @@ $SOFTWARE/ldsc.py \
 ## Z-score: 1.5604
 ## P: 0.1187
 ## 
-## 
 ## Summary of Genetic Correlation Results
-##                                                              p1                                                                 p2      rg      se       z       p  h2_obs  h2_obs_se  h2_int  h2_int_se  gcov_int  gcov_int_se
-##  /Users/alicesmail/Desktop/KCL/LCV/GWASFiles/TeaMHC.sumstats.gz  /Users/alicesmail/Desktop/KCL/LCV/GWASFiles/HeightMHC.sumstats.gz  0.0298  0.0191  1.5604  0.1187  0.4476     0.0247  1.2305     0.0524   -0.0116       0.0089
+##  p1                   p2      rg      se       z       p  h2_obs  h2_obs_se  h2_int  h2_int_se  gcov_int  gcov_int_se
+##  TeaMHC.sumstats.gz  HeightMHC.sumstats.gz  0.0298  0.0191  1.5604  0.1187  0.4476     0.0247  1.2305     0.0524   -0.0116       0.0089
 ## 
 ## Analysis finished at Tue Jun 25 11:06:18 2024
 ## Total time elapsed: 9.27s</code></pre>
@@ -954,23 +951,11 @@ The genetic correlation between tea consumption &amp; height is
 </li>
 </ul>
 
-</div>
-<script type="text/javascript">// <![CDATA[
-function ShowHide(divId)
-{if(document.getElementById(divId).style.display == 'none'){
-document.getElementById(divId).style.display='block';}
-else{document.getElementById(divId).style.display = 'none';}}
-// ]]></script>
-
-
-<p><button2 onclick="javascript:ShowHide('HiddenDiv4')" type="button2">Summary</button2></p>
-<div class="mid" id="HiddenDiv4" style="display: none;">
-	
 <h2>
-<u>4. Conclusion</u>
+<u>Conclusion</u>
 </h2>
-<p>Here we have performed genetic correlation analysis on two pairs of
-traits using the LDSC package. We can see that while one pair of traits
+<p>Here I have performed genetic correlation analysis on two pairs of
+traits using the LDSC package. while one pair of traits
 (T2D &amp; BMI) are highly genetically correlated, tea-drinking and
 height show no genetic correlation.</p>
 
@@ -981,7 +966,6 @@ function ShowHide(divId)
 document.getElementById(divId).style.display='block';}
 else{document.getElementById(divId).style.display = 'none';}}
 // ]]></script>
-
 
 
 </div>
