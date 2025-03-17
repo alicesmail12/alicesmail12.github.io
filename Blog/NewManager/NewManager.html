@@ -531,6 +531,11 @@ TeamData$match_xG &lt;- TeamData$match_xG/TeamData$mean_xGC
 TeamData$match_xGC &lt;- TeamData$match_xGC/TeamData$mean_xG
 TeamData$match_G &lt;- TeamData$match_G/TeamData$mean_xGC
 TeamData$match_GC &lt;- TeamData$match_GC/TeamData$mean_xG</code></pre>
+
+<h2>
+Plotting Data
+</h2>
+	
 <p>Now I can plot a performance ‘score’ which I will calculate by
 finding the mean of (xG - xGC) and (actual G - actual GC).</p>
 <pre class="r"><code># Performance score
@@ -552,10 +557,6 @@ TeamDataPlot &lt;- merge(TeamData, TeamColours, by.x=&#39;team_name&#39;, by.y=&
 col &lt;- as.character(TeamDataPlot$colour1)
 names(col) &lt;- as.character(TeamDataPlot$team_name)
 
-<h2>
-Plotting Data
-</h2>
-	
 # Plot
 CreatePlot &lt;- function(Team){
   
