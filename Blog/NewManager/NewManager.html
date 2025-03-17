@@ -593,7 +593,8 @@ infographic!</p>
 M1 &lt;- TeamDataPlot %&gt;% filter(team_name==&#39;West Ham&#39;, gameweek&lt;21) %&gt;% summarise(mean=mean(score))
 M2 &lt;- TeamDataPlot %&gt;% filter(team_name==&#39;West Ham&#39;, gameweek&gt;20, gameweek&lt;27) %&gt;% summarise(mean=mean(score))
 top3 &lt;- TeamDataPlot %&gt;% filter(team_name==&#39;West Ham&#39;) %&gt;% slice_max(score, n=3)
-
+</code></pre>
+	
 <h2>
 Making a Graphic
 </h2>
@@ -602,8 +603,10 @@ Making a Graphic
 them with the mean score for the first manager, and the mean score for
 the first 6 weeks of the second manager.</p>
 
+<pre class="r"><code># Save all plots
 <img src="https://alicesmail12.github.io/Blog/NewManager/NewManager.png">
-
+</code></pre>
+	
   <p>You can see from looking at my made up ‘score’ metric, while West Ham
 have slightly improved with Graham Potter, it is only really Everton who
 have shown a big improvement after being taken over by David Moyes -
