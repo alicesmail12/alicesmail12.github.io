@@ -584,21 +584,7 @@ infographic!</p>
 M1 &lt;- TeamDataPlot %&gt;% filter(team_name==&#39;West Ham&#39;, gameweek&lt;21) %&gt;% summarise(mean=mean(score))
 M2 &lt;- TeamDataPlot %&gt;% filter(team_name==&#39;West Ham&#39;, gameweek&gt;20, gameweek&lt;27) %&gt;% summarise(mean=mean(score))
 top3 &lt;- TeamDataPlot %&gt;% filter(team_name==&#39;West Ham&#39;) %&gt;% slice_max(score, n=3)
-TeamDataPlot%&gt;%filter(team_name==&#39;Everton&#39;, gameweek&lt;22) %&gt;% summarise(mean=mean(score))
-TeamDataPlot%&gt;%filter(team_name==&#39;Everton&#39;, gameweek&gt;21, gameweek&lt;28) %&gt;% summarise(mean=mean(score))
-TeamDataPlot%&gt;%filter(team_name==&#39;Everton&#39;) %&gt;% ungroup() %&gt;% slice_max(score, n=3)</code></pre>
-<pre><code>##         mean
-## 1 -0.3665301
-##       mean
-## 1 0.440004
-##   team_name gameweek  match_xG match_xGC  match_G  match_GC  mean_xG mean_xGC
-## 1   Everton       24 1.4404605 0.3641910 2.505149 0.7432470 1.717211 1.390671
-## 2   Everton       14 0.6345257 0.6896116 1.244168 0.0000000 1.131071 1.607500
-## 3   Everton        6 0.6838639 0.6175993 1.536773 0.6501045 1.538214 1.301429
-##       score colour1 colour2
-## 1 1.4190856 #003399 #ffffff
-## 2 0.5945410 #003399 #ffffff
-## 3 0.4764665 #003399 #ffffff</code></pre>
+
 <p>Next I put the 6 output graphs into Adobe Illustrator and annotate
 them with the mean score for the first manager, and the mean score for
 the first 6 weeks of the second manager.</p>
