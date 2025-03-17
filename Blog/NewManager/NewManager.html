@@ -500,6 +500,11 @@ TeamData$match_xG &lt;- ifelse(TeamData$team_name==&#39;Everton&#39;&amp;TeamDat
 TeamData$match_xGC &lt;- ifelse(TeamData$team_name==&#39;Everton&#39;&amp;TeamData$gameweek==24, TeamData$match_xGC/2, TeamData$match_xGC)
 TeamData$match_G &lt;- ifelse(TeamData$team_name==&#39;Everton&#39;&amp;TeamData$gameweek==24, TeamData$match_G/2, TeamData$match_G)
 TeamData$match_GC &lt;- ifelse(TeamData$team_name==&#39;Everton&#39;&amp;TeamData$gameweek==24, TeamData$match_GC/2, TeamData$match_GC)</code></pre>
+
+<h2>
+Summarising Data
+</h2>
+	
 <p>Next I want to adjust these scores by opponent difficulty. To do this
 I will summarise team xGC and xG over a season for each team to adjust
 each gameweek!</p>
@@ -547,6 +552,10 @@ TeamDataPlot &lt;- merge(TeamData, TeamColours, by.x=&#39;team_name&#39;, by.y=&
 col &lt;- as.character(TeamDataPlot$colour1)
 names(col) &lt;- as.character(TeamDataPlot$team_name)
 
+<h2>
+Plotting Data
+</h2>
+	
 # Plot
 CreatePlot &lt;- function(Team){
   
@@ -585,6 +594,10 @@ M1 &lt;- TeamDataPlot %&gt;% filter(team_name==&#39;West Ham&#39;, gameweek&lt;2
 M2 &lt;- TeamDataPlot %&gt;% filter(team_name==&#39;West Ham&#39;, gameweek&gt;20, gameweek&lt;27) %&gt;% summarise(mean=mean(score))
 top3 &lt;- TeamDataPlot %&gt;% filter(team_name==&#39;West Ham&#39;) %&gt;% slice_max(score, n=3)
 
+<h2>
+Making a Graphic
+</h2>
+	
 <p>Next I put the 6 output graphs into Adobe Illustrator and annotate
 them with the mean score for the first manager, and the mean score for
 the first 6 weeks of the second manager.</p>
