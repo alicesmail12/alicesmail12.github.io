@@ -454,12 +454,11 @@ library(ggrepel)
 library(dplyr)
 library(ggimage)
 library(Metrics)
-source(&#39;/Users/alicesmail/Desktop/Programming/GitHubPage/FPL/Projects/PredictingPoints/Prediction-Functions.R&#39;)
+source(&#39;Prediction-Functions.R&#39;)
 
 # Read data
-Path &lt;- &#39;/Users/alicesmail/Desktop/Programming/GitHubPage/FPL/2024-2025-Data/&#39;
-PlayerData &lt;- read_csv(paste0(Path, &quot;FPL-Gameweeks-28.csv&quot;))
-TeamColours &lt;- read_csv(paste0(Path, &quot;Team-Colours.csv&quot;))</code></pre>
+PlayerData &lt;- read_csv(&quot;FPL-Gameweeks-28.csv&quot;)
+TeamColours &lt;- read_csv(&quot;Team-Colours.csv&quot;)</code></pre>
 <p>I also want to get fixture information, which is available from
 Vaastav’s FPL GitHub repository.</p>
 <pre class="r"><code># Set github
