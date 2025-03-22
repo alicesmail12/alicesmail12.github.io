@@ -537,16 +537,15 @@ be due to chance, and that the null hypothesis can be rejected.</p>
 2 * pt(abs(tStat), nrow(GoalsCon)-1, lower.tail=FALSE)</code></pre>
 <pre><code>## [1] 4.033147e-32</code></pre>
 <p>The t.test function in R also does all of this in one go!</p>
-<pre class="r"><code>t.test(GoalsCon$mean_goals_conceded, mu=30, alternative=&quot;two.sided&quot;)</code></pre>
-<pre><code>##  One Sample t-test
-## data:  GoalsCon$mean_goals_conceded
-## t = -751.41, df = 161, p-value &lt; 2.2e-16
-## alternative hypothesis: true mean is not equal to 30
+<pre class="r"><code>t.test(GoalsCon$mean_goals_conceded, mu=1, alternative=&quot;two.sided&quot;)</code></pre>
+<pre><code>## One Sample t-test
+## data:  GoalsCon$mean_goals_conceded
+## t = 14.904, df = 161, p-value < 2.2e-16
+## alternative hypothesis: true mean is not equal to 1
 ## 95 percent confidence interval:
-##  1.489268 1.638735
+## 1.489268 1.638735
 ## sample estimates:
-## mean of x 
-##  1.564002</code></pre>
+## mean of x 1.564002</code></pre>
 <h2>
 Summary
 </h2>
