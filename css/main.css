@@ -111,3 +111,142 @@ br {
    display: block;
    margin: 8px 0;
 }
+.tabset-dropdown > .nav-tabs {
+display: inline-table;
+max-height: 500px;
+min-height: 44px;
+overflow-y: auto;
+border: 1px solid #ddd;
+border-radius: 4px;
+}
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+content: "\e259";
+font-family: 'Glyphicons Halflings';
+display: inline-block;
+padding: 10px;
+border-right: 1px solid #ddd;
+}
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+content: "\e258";
+font-family: 'Glyphicons Halflings';
+border: none;
+}
+.tabset-dropdown > .nav-tabs > li.active {
+display: block;
+}
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+border: none;
+display: inline-block;
+border-radius: 4px;
+background-color: transparent;
+}
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+display: block;
+float: none;
+}
+.tabset-dropdown > .nav-tabs > li {
+display: none;
+}
+
+pre {
+display: block;
+padding: 20px;
+margin: 0 0 10px;
+font-size: 15px;
+line-height: 1.5;
+color: #333;
+word-break: break-all;
+word-wrap: break-word;
+background-color: #f7f7f8;
+border: 0px solid #ccc;
+border-radius: 5px;
+}
+
+code, kbd, pre, samp {
+font-family: 'IBM Plex Mono';
+}
+
+.container {
+padding-right: 0px;
+padding-left: 0px;
+margin-right: auto;
+margin-left: auto;
+width: 1200px;
+}
+
+pre:not([class]) {
+background-color: #434b5e;
+color: #ffffff;
+}
+
+p {
+display: block;
+margin-block-start: 1em;
+margin-block-end: 1em;
+margin-inline-start: 0px;
+margin-inline-end: 0px;
+}
+
+h1 {
+display: block;
+font-size: 2em;
+margin-block-start: 0.67em;
+margin-block-end: 0.67em;
+margin-inline-start: 0px;
+margin-inline-end: 0px;
+font-weight: bold;
+}
+
+h2 {
+display: block;
+margin-block-start: 0.67em;
+margin-block-end: 0em;
+margin-inline-start: 0px;
+margin-inline-end: 0px;
+}
+
+ul, dir {
+display: block;
+list-style-type: disc;
+margin-block-start: 1em;
+margin-block-end: 1em;
+margin-inline-start: 0px;
+margin-inline-end: 0px;
+padding-inline-start: 40px;
+}
+menu, dir {
+display: block;
+list-style-type: disc;
+margin-block-start: 0em;
+margin-block-end: 0em;
+margin-inline-start: 0px;
+margin-inline-end: 0px;
+padding-inline-start: 0px;
+}
+
+button {
+  background-color: #04AA6D;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+.main-container {
+}
+img {
+max-width:100%;
+}
+button.code-folding-btn:focus {
+outline: none;
+}
+summary {
+display: list-item;
+}
+pre code {
+padding: 0;
+}
