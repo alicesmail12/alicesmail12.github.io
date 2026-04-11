@@ -530,9 +530,9 @@ England:</p>
 #coords$y=80-coords$y
 
 # Get pass lines
-#lines &lt;- lines %&gt;% separate_wider_delim(pair_key, delim=&quot;_&quot;, names=c(&quot;Player1&quot;, &quot;Player2&quot;))
-#linesCoords &lt;- merge(lines, coords, by.x=&#39;Player1&#39;, by.y=&#39;player_name&#39;)
-#linesCoords &lt;- merge(linesCoords, coords, by.x=&#39;Player2&#39;, by.y=&#39;player_name&#39;)
+lines &lt;- lines %&gt;% separate_wider_delim(pair_key, delim=&quot;_&quot;, names=c(&quot;Player1&quot;, &quot;Player2&quot;))
+linesCoords &lt;- merge(lines, coords, by.x=&#39;Player1&#39;, by.y=&#39;player_name&#39;)
+linesCoords &lt;- merge(linesCoords, coords, by.x=&#39;Player2&#39;, by.y=&#39;player_name&#39;)
 
 # Plot
 #EnglandPasses &lt;- PassMap(coords, linesCoords, &#39;#000040&#39;, &#39;black&#39;)</code></pre>
@@ -542,28 +542,28 @@ Activity Heatmap
 <p>I also want to make a heatmap showing the active areas of the pitch
 for each team. Here I also plot the lines of the football pitch:</p>
 <pre class="r"><code># Get data
-#areamap &lt;- read.csv(&#39;AreaMap-3844384.csv&#39;, row.names=&#39;X&#39;) %&gt;% 
-#  t() %&gt;% as.data.frame() %&gt;% rownames_to_column(&#39;Area&#39;)
-#areamap$Area &lt;- gsub(&#39;X&#39;, &#39;&#39;, areamap$Area)
-#areamap &lt;- areamap%&gt;% separate_wider_delim(Area, delim=&quot;_&quot;, names=c(&quot;x&quot;, &quot;y&quot;))
+areamap &lt;- read.csv(&#39;AreaMap-3844384.csv&#39;, row.names=&#39;X&#39;) %&gt;% 
+  t() %&gt;% as.data.frame() %&gt;% rownames_to_column(&#39;Area&#39;)
+areamap$Area &lt;- gsub(&#39;X&#39;, &#39;&#39;, areamap$Area)
+areamap &lt;- areamap%&gt;% separate_wider_delim(Area, delim=&quot;_&quot;, names=c(&quot;x&quot;, &quot;y&quot;))
 
 # Heatmap
-#ggplot(areamap, aes(x=as.numeric(y)-10, y=as.numeric(x)-10, fill=Difference)) +
-#  geom_tile()+
-#  scale_fill_gradientn(colours=c(&#39;#8B0D11&#39;,&#39;#000040&#39;), breaks=c(-100,100))+
-#  theme_void()+
-#  guides(fill=&#39;none&#39;)+
+ggplot(areamap, aes(x=as.numeric(y)-10, y=as.numeric(x)-10, fill=Difference)) +
+  geom_tile()+
+  scale_fill_gradientn(colours=c(&#39;#8B0D11&#39;,&#39;#000040&#39;), breaks=c(-100,100))+
+  theme_void()+
+  guides(fill=&#39;none&#39;)+
   
   # Penalty areas
-#  annotate(geom=&#39;segment&#39;, x=16.5, xend=16.5, y=80/2+16.5, yend=80/2-16.5, alpha=1, colour=&#39;#ffffff&#39;, size=1)+
-#  annotate(geom=&#39;segment&#39;, x=0, xend=16.5, y=80/2+16.5, yend=80/2+16.5, alpha=1, colour=&#39;#ffffff&#39;, size=1)+
-#  annotate(geom=&#39;segment&#39;, x=0, xend=16.5, y=80/2-16.5, yend=80/2-16.5, alpha=1, colour=&#39;#ffffff&#39;, size=1)+
-#  annotate(geom=&#39;segment&#39;, x=120-16.5, xend=120-16.5, y=80/2+16.5, yend=80/2-16.5, alpha=1, colour=&#39;#ffffff&#39;, size=1)+
-#  annotate(geom=&#39;segment&#39;, x=120, xend=120-16.5, y=80/2+16.5, yend=80/2+16.5, alpha=1, colour=&#39;#ffffff&#39;, size=1)+
-#  annotate(geom=&#39;segment&#39;, x=120, xend=120-16.5, y=80/2-16.5, yend=80/2-16.5, alpha=1, colour=&#39;#ffffff&#39;, size=1)+
+  annotate(geom=&#39;segment&#39;, x=16.5, xend=16.5, y=80/2+16.5, yend=80/2-16.5, alpha=1, colour=&#39;#ffffff&#39;, size=1)+
+  annotate(geom=&#39;segment&#39;, x=0, xend=16.5, y=80/2+16.5, yend=80/2+16.5, alpha=1, colour=&#39;#ffffff&#39;, size=1)+
+  annotate(geom=&#39;segment&#39;, x=0, xend=16.5, y=80/2-16.5, yend=80/2-16.5, alpha=1, colour=&#39;#ffffff&#39;, size=1)+
+  annotate(geom=&#39;segment&#39;, x=120-16.5, xend=120-16.5, y=80/2+16.5, yend=80/2-16.5, alpha=1, colour=&#39;#ffffff&#39;, size=1)+
+  annotate(geom=&#39;segment&#39;, x=120, xend=120-16.5, y=80/2+16.5, yend=80/2+16.5, alpha=1, colour=&#39;#ffffff&#39;, size=1)+
+  annotate(geom=&#39;segment&#39;, x=120, xend=120-16.5, y=80/2-16.5, yend=80/2-16.5, alpha=1, colour=&#39;#ffffff&#39;, size=1)+
   
   # Centre
-#  annotate(geom=&#39;segment&#39;, x=120/2, xend=120/2, y=0, yend=80, alpha=1, colour=&#39;#ffffff&#39;, size=1)</code></pre>
+  annotate(geom=&#39;segment&#39;, x=120/2, xend=120/2, y=0, yend=80, alpha=1, colour=&#39;#ffffff&#39;, size=1)</code></pre>
 <h2>
 xG Plot
 </h2>
@@ -572,24 +572,25 @@ minutes played:</p>
 <pre class="r"><code>#xG &lt;- read.csv(&#39;xG-3844384.csv&#39;)
 
 # Cumulative xG
-#xG$cum_sum_team &lt;- ave(xG$shot_statsbomb_xg, xG$team_name, FUN=cumsum) - xG$shot_statsbomb_xg
-#xG$cum_sum_team_actual &lt;- ave(xG$shot_statsbomb_xg, xG$team_name, FUN=cumsum)
-#xG$cum_sum_all &lt;- ave(xG$shot_statsbomb_xg, FUN=cumsum) - xG$shot_statsbomb_xg
-#xG$cum_sum_otherteam &lt;- xG$cum_sum_all-xG$cum_sum_team
+xG$cum_sum_team &lt;- ave(xG$shot_statsbomb_xg, xG$team_name, FUN=cumsum) - xG$shot_statsbomb_xg
+xG$cum_sum_team_actual &lt;- ave(xG$shot_statsbomb_xg, xG$team_name, FUN=cumsum)
+xG$cum_sum_all &lt;- ave(xG$shot_statsbomb_xg, FUN=cumsum) - xG$shot_statsbomb_xg
+xG$cum_sum_otherteam &lt;- xG$cum_sum_all-xG$cum_sum_team
 
 # Line plot
-#ggplot(xG %&gt;% mutate(shot_statsbomb_xg=ifelse(team_name==&quot;Spain Women&#39;s&quot;, (xG$shot_statsbomb_xg*-1), xG$shot_statsbomb_xg)), aes(x=minute, y=shot_statsbomb_xg, fill=team_name))+
-#  geom_col(width=2)+
-#  theme_void()+
-#  theme(text=element_text(family=&#39;Radio Canada Big&#39;, size=15),
-#        plot.background=element_rect(fill=&#39;#ffffff&#39;, colour=&#39;#ffffff&#39;),
-#        panel.background=element_rect(fill=&#39;#ffffff&#39;, colour=&#39;#ffffff&#39;),
-#        legend.background=element_rect(fill=&#39;#ffffff&#39;),
-#        plot.title=element_text(hjust=0.5, face=&#39;bold&#39;, size=20),
-#        plot.subtitle=element_text(hjust=0.5, size=12),
-#        panel.border = element_blank())+
-#  scale_fill_manual(values=c(&#39;#000040&#39;,&#39;#8B0D11&#39;))+
-#  guides(fill=&#39;none&#39;)</code></pre>
+ggplot(xG %&gt;% mutate(shot_statsbomb_xg=ifelse(team_name==&quot;Spain Women&#39;s&quot;, (xG$shot_statsbomb_xg*-1), xG$shot_statsbomb_xg)), aes(x=minute, y=shot_statsbomb_xg, fill=team_name))+
+  geom_col(width=2)+
+  theme_void()+
+  theme(text=element_text(family=&#39;Radio Canada Big&#39;, size=15),
+        plot.background=element_rect(fill=&#39;#ffffff&#39;, colour=&#39;#ffffff&#39;),
+        panel.background=element_rect(fill=&#39;#ffffff&#39;, colour=&#39;#ffffff&#39;),
+        legend.background=element_rect(fill=&#39;#ffffff&#39;),
+        plot.title=element_text(hjust=0.5, face=&#39;bold&#39;, size=20),
+        plot.subtitle=element_text(hjust=0.5, size=12),
+        panel.border = element_blank())+
+  scale_fill_manual(values=c(&#39;#000040&#39;,&#39;#8B0D11&#39;))+
+  guides(fill=&#39;none&#39;)</code></pre>
+
 <p>With all of these plots for both England and Spain I then made a
 graphic in Adobe Illustrator:</p>
 
