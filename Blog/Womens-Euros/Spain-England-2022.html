@@ -495,8 +495,7 @@ well as the passing coords and arrows.</p>
     
     # Centre
     annotate(geom=&#39;segment&#39;, x=120/2, xend=120/2, y=0, yend=80, alpha=0.5, colour = &quot;black&quot;)+
-    #ggforce::geom_circle(aes(x0=120/2, y0=80/2, r=9.15), inherit.aes=FALSE)+
-    
+
     # Lines
     annotate(geom=&#39;segment&#39;, x=linesCoords$x.x, xend=linesCoords$x.y, 
              y=80-linesCoords$y.x, yend=80-linesCoords$y.y, size=linesCoords$pass_count/5,
