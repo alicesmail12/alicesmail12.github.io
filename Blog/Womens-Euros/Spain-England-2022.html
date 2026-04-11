@@ -526,8 +526,8 @@ well as the passing coords and arrows.</p>
 <p>I then clean the data and use my function to plot the passing map for
 England:</p>
 <pre class="r"><code># Modify
-#coords$x=120-coords$x
-#coords$y=80-coords$y
+coords$x=120-coords$x
+coords$y=80-coords$y
 
 # Get pass lines
 lines &lt;- lines %&gt;% separate_wider_delim(pair_key, delim=&quot;_&quot;, names=c(&quot;Player1&quot;, &quot;Player2&quot;))
@@ -535,7 +535,7 @@ linesCoords &lt;- merge(lines, coords, by.x=&#39;Player1&#39;, by.y=&#39;player_
 linesCoords &lt;- merge(linesCoords, coords, by.x=&#39;Player2&#39;, by.y=&#39;player_name&#39;)
 
 # Plot
-#EnglandPasses &lt;- PassMap(coords, linesCoords, &#39;#000040&#39;, &#39;black&#39;)
+EnglandPasses &lt;- PassMap(coords, linesCoords, &#39;#000040&#39;, &#39;black&#39;)
 
 <img style='height: 100%; width: 30%; justify-content: center; object-fit: contain' src="https://alicesmail12.github.io/Blog/Womens-Euros/England-3844384.png"></code></pre>
 
