@@ -535,9 +535,9 @@ linesCoords &lt;- merge(lines, coords, by.x=&#39;Player1&#39;, by.y=&#39;player_
 linesCoords &lt;- merge(linesCoords, coords, by.x=&#39;Player2&#39;, by.y=&#39;player_name&#39;)
 
 # Plot
-#EnglandPasses &lt;- PassMap(coords, linesCoords, &#39;#000040&#39;, &#39;black&#39;)</code></pre>
+#EnglandPasses &lt;- PassMap(coords, linesCoords, &#39;#000040&#39;, &#39;black&#39;)
 
-<pre class="r"><code><img style='height: 100%; width: 30%; object-fit: contain' src="https://alicesmail12.github.io/Blog/Womens-Euros/England-3844384.png"></code></pre>
+<img style='height: 100%; width: 30%; justify-content: center; object-fit: contain' src="https://alicesmail12.github.io/Blog/Womens-Euros/England-3844384.png"></code></pre>
 
 
 <h2>
@@ -567,9 +567,9 @@ ggplot(areamap, aes(x=as.numeric(y)-10, y=as.numeric(x)-10, fill=Difference)) +
   annotate(geom=&#39;segment&#39;, x=120, xend=120-16.5, y=80/2-16.5, yend=80/2-16.5, alpha=1, colour=&#39;#ffffff&#39;, size=1)+
   
   # Centre
-  annotate(geom=&#39;segment&#39;, x=120/2, xend=120/2, y=0, yend=80, alpha=1, colour=&#39;#ffffff&#39;, size=1)</code></pre>
+  annotate(geom=&#39;segment&#39;, x=120/2, xend=120/2, y=0, yend=80, alpha=1, colour=&#39;#ffffff&#39;, size=1)
 
-<pre class="r"><code><img style='height: 100%; width: 30%; object-fit: contain' src="https://alicesmail12.github.io/Blog/Womens-Euros/DiffHeat-3844384.png"></code></pre>
+<img style='height: 100%; width: 30%; justify-content: center; object-fit: contain' src="https://alicesmail12.github.io/Blog/Womens-Euros/DiffHeat-3844384.png"></code></pre>
 
 <h2>
 xG Plot
@@ -597,9 +597,9 @@ ggplot(xG %&gt;% mutate(shot_statsbomb_xg=ifelse(team_name==&quot;Spain Women&#3
         plot.subtitle=element_text(hjust=0.5, size=12),
         panel.border = element_blank())+
   scale_fill_manual(values=c(&#39;#000040&#39;,&#39;#8B0D11&#39;))+
-  guides(fill=&#39;none&#39;)</code></pre>
+  guides(fill=&#39;none&#39;)
 
-<pre class="r"><code><img style='height: 100%; width: 30%; object-fit: contain' src="https://alicesmail12.github.io/Blog/Womens-Euros/xG-3844384.png"></code></pre>
+<img style='height: 100%; width: 30%; justify-content: center; object-fit: contain' src="https://alicesmail12.github.io/Blog/Womens-Euros/xG-3844384.png"></code></pre>
 	
 <p>With all of these plots for both England and Spain I then made a
 graphic in Adobe Illustrator:</p>
