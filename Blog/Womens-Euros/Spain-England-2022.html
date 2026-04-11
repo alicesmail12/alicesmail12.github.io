@@ -472,8 +472,8 @@ I read in the passmap data I got via mplsoccer into R!</p>
 library(tidyverse)
 
 # Read data
-#coords &lt;- read.csv(&#39;PassMapCoords-3844384-England.csv&#39;)
-#lines &lt;- read.csv(&#39;PassMapPasses-3844384-England.csv&#39;)</code></pre>
+coords &lt;- read.csv(&#39;PassMapCoords-3844384-England.csv&#39;)
+lines &lt;- read.csv(&#39;PassMapPasses-3844384-England.csv&#39;)</code></pre>
 <p>I also make a function that plots the lines of a football pitch, as
 well as the passing coords and arrows.</p>
 <pre class="r"><code>PassMap &lt;- function(coords, linesCoords, colour1, colour2){
@@ -537,7 +537,7 @@ linesCoords &lt;- merge(linesCoords, coords, by.x=&#39;Player2&#39;, by.y=&#39;p
 # Plot
 EnglandPasses &lt;- PassMap(coords, linesCoords, &#39;#000040&#39;, &#39;black&#39;)
 
-<img style='height: 100%; width: 30%; justify-content: center; object-fit: contain' src="https://alicesmail12.github.io/Blog/Womens-Euros/England-3844384.png"></code></pre>
+<img style='height: 100%; width: 30%; align-items: center; object-fit: contain' src="https://alicesmail12.github.io/Blog/Womens-Euros/England-3844384.png"></code></pre>
 
 
 <h2>
@@ -569,7 +569,7 @@ ggplot(areamap, aes(x=as.numeric(y)-10, y=as.numeric(x)-10, fill=Difference)) +
   # Centre
   annotate(geom=&#39;segment&#39;, x=120/2, xend=120/2, y=0, yend=80, alpha=1, colour=&#39;#ffffff&#39;, size=1)
 
-<img style='height: 100%; width: 30%; justify-content: center; object-fit: contain' src="https://alicesmail12.github.io/Blog/Womens-Euros/DiffHeat-3844384.png"></code></pre>
+<img style='height: 100%; width: 30%; align-items: center; object-fit: contain' src="https://alicesmail12.github.io/Blog/Womens-Euros/DiffHeat-3844384.png"></code></pre>
 
 <h2>
 xG Plot
@@ -599,7 +599,7 @@ ggplot(xG %&gt;% mutate(shot_statsbomb_xg=ifelse(team_name==&quot;Spain Women&#3
   scale_fill_manual(values=c(&#39;#000040&#39;,&#39;#8B0D11&#39;))+
   guides(fill=&#39;none&#39;)
 
-<img style='height: 100%; width: 30%; justify-content: center; object-fit: contain' src="https://alicesmail12.github.io/Blog/Womens-Euros/xG-3844384.png"></code></pre>
+<img style='height: 100%; width: 30%; align-items: center; object-fit: contain' src="https://alicesmail12.github.io/Blog/Womens-Euros/xG-3844384.png"></code></pre>
 	
 <p>With all of these plots for both England and Spain I then made a
 graphic in Adobe Illustrator:</p>
