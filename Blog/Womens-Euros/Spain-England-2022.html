@@ -461,8 +461,8 @@ The England-Spain match is event 3844384. I obtained csvs showing
 average positions and passing between players on both teams, xG, and an
 activity area map.</p>
 <pre class="python"><code># Get data
-#parser = Sbopen()
-#parser.event(3844384)</code></pre>
+parser = Sbopen()
+parser.event(3844384)</code></pre>
 <h2>
 Passing Map
 </h2>
@@ -569,7 +569,8 @@ xG Plot
 </h2>
 <p>Finally I want to make a simple bar plot showing xG across the 120
 minutes played:</p>
-<pre class="r"><code>#xG &lt;- read.csv(&#39;xG-3844384.csv&#39;)
+<pre class="r"><code># Get data
+xG &lt;- read.csv(&#39;xG-3844384.csv&#39;)
 
 # Cumulative xG
 xG$cum_sum_team &lt;- ave(xG$shot_statsbomb_xg, xG$team_name, FUN=cumsum) - xG$shot_statsbomb_xg
