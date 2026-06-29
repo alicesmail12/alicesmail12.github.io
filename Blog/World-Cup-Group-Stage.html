@@ -566,18 +566,7 @@ data$xGDiff &lt;- data$xG - data$xGA</code></pre>
 Plotting Data
 </h2>
 <p>Next I wanted to plot some of this data to investigate it:</p>
-<pre class="r"><code># Make theme
-theme &lt;- theme_classic() + theme(text=element_text(family=&#39;Radio Canada Big&#39;, size=14), 
-        legend.position=&#39;right&#39;,
-        axis.line=element_blank(),
-        plot.background=element_rect(fill=&#39;#feffeb&#39;),
-        panel.background=element_rect(fill=&#39;#feffeb&#39;),
-        legend.background=element_rect(fill=&#39;#feffeb&#39;),
-        panel.border=element_rect(colour=&quot;black&quot;, fill=NA, linewidth=1),
-        axis.ticks=element_blank(),
-        plot.title = element_text(hjust = 0.5))
-
-# Plot: GDP
+<pre class="r"><code># Plot: GDP
 ggplot(data=data, aes(y=xGDiff, x=log10(GDP)))+
   geom_point()+
   geom_smooth(method=lm, se=FALSE, colour=&#39;black&#39;, linetype=&#39;dotted&#39;, size=0.75) +
